@@ -241,6 +241,13 @@ details.fqi[open] .fqico{background:var(--pdim);color:#0EA5E9;transform:rotate(4
 .fsub:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--pglow)}
 .fnote{text-align:center;font-size:12px;color:var(--text3);margin-top:12px}
 textarea.fi{resize:vertical;min-height:100px}
+.ferr{display:none;font-size:12px;color:#EF4444;margin-top:5px}
+.fupload{border:2px dashed var(--border);background:var(--surface);border-radius:12px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.fupload:hover,.fupload.drag-over{border-color:#0EA5E9;background:rgba(14,165,233,0.05)}
+.ffile{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;font-size:13px;gap:8px}
+.ffile-name{color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.ffile-del{background:none;border:none;color:var(--text3);cursor:pointer;padding:0;font-size:15px;flex-shrink:0;line-height:1}
+.ffile-del:hover{color:#EF4444}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32px 32px}
 .footi{max-width:1240px;margin:0 auto}
 .foottop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
@@ -819,17 +826,35 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
 </div>
 <div class="cform fu fd2">
 <h3 class="cftit">Démarrer mon audit — sans engagement</h3>
-<div class="fg"><label class="fl">Nom &amp; Prénom *</label><input class="fi" type="text" id="cNom" placeholder="Jean Dupont"></div>
 <div class="frow">
-<div class="fg"><label class="fl">Email professionnel *</label><input class="fi" type="email" id="cEmail" placeholder="jean@societe.fr"></div>
-<div class="fg"><label class="fl">Téléphone *</label><input class="fi" type="tel" id="cTel" placeholder="06 XX XX XX XX"></div>
+<div class="fg"><label class="fl">Nom &amp; Prénom *</label><input class="fi" type="text" id="cNom" placeholder="Jean Dupont"><div id="cNomErr" class="ferr"></div></div>
+<div class="fg"><label class="fl">Société / Organisation</label><input class="fi" type="text" id="cSoc" placeholder="Nom de votre société"></div>
 </div>
 <div class="frow">
-<div class="fg"><label class="fl">Type de bâtiment</label><select class="fi"><option>Bureaux / Tertiaire</option><option>Hôtel / Hébergement</option><option>Commerce / Retail</option><option>Logement collectif</option><option>Industrie / Entrepôt</option><option>Établissement public</option><option>Autre</option></select></div>
-<div class="fg"><label class="fl">Budget travaux estimé</label><select class="fi"><option>Moins de 100k€</option><option>100k€ – 300k€</option><option>300k€ – 500k€</option><option>500k€ – 1M€</option><option>Plus de 1M€</option></select></div>
+<div class="fg"><label class="fl">Email professionnel *</label><input class="fi" type="email" id="cEmail" placeholder="jean@societe.fr"><div id="cEmailErr" class="ferr"></div></div>
+<div class="fg"><label class="fl">Téléphone *</label><input class="fi" type="tel" id="cTel" placeholder="06 XX XX XX XX"><div id="cTelErr" class="ferr"></div></div>
 </div>
-<div class="fg"><label class="fl">Description du projet</label><textarea class="fi" placeholder="Décrivez brièvement vos travaux, la surface concernée, le stade d'avancement…"></textarea></div>
-<button class="fsub" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Envoyer ma demande</button>
+<div class="frow">
+<div class="fg"><label class="fl">Type de bâtiment</label><select class="fi" id="cBat"><option>Bureaux / Tertiaire</option><option>Hôtel / Hébergement</option><option>Commerce / Retail</option><option>Logement collectif</option><option>Industrie / Entrepôt</option><option>Établissement public</option><option>Autre</option></select></div>
+<div class="fg"><label class="fl">Surface approximative</label><select class="fi" id="cSurf"><option>Moins de 500 m²</option><option>500 à 1 000 m²</option><option>1 000 à 3 000 m²</option><option>3 000 à 5 000 m²</option><option>Plus de 5 000 m²</option></select></div>
+</div>
+<div class="frow">
+<div class="fg"><label class="fl">Budget travaux estimé</label><select class="fi" id="cBudget"><option>Moins de 100k€</option><option>100k€ – 300k€</option><option>300k€ – 500k€</option><option>500k€ – 1M€</option><option>Plus de 1M€</option></select></div>
+<div class="fg"><label class="fl">Stade du projet</label><select class="fi" id="cStade"><option>Conception / Avant-projet</option><option>DCE en cours</option><option>Devis signés, travaux non démarrés</option><option>Chantier en cours</option><option>Autre</option></select></div>
+</div>
+<div class="fg"><label class="fl">Description du projet</label><textarea class="fi" id="cDesc" placeholder="Décrivez vos travaux, la surface concernée, le stade d'avancement, vos contraintes..."></textarea><div id="cDescErr" class="ferr"></div></div>
+<div class="fg">
+<label class="fl">Documents <span style="font-weight:400;color:var(--text3)">(optionnel — plans, devis, photos)</span></label>
+<div class="fupload" id="cDropZone" onclick="document.getElementById('cFiles').click()" ondragover="fDragOver(event)" ondragleave="fDragLeave(event)" ondrop="fDrop(event)">
+<input type="file" id="cFiles" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.doc,.docx" style="display:none" onchange="fFilesAdd(this.files)">
+<i class="fas fa-cloud-upload-alt" style="font-size:28px;color:var(--text3);margin-bottom:10px;display:block"></i>
+<div style="font-size:14px;font-weight:600;color:var(--text2)">Glissez vos plans, devis ou photos ici</div>
+<div style="font-size:12px;color:var(--text3);margin-top:4px">PDF, images, DWG — 10 Mo max par fichier</div>
+</div>
+<div id="cFileList" style="margin-top:10px;display:flex;flex-direction:column;gap:6px"></div>
+<div id="cFileErr" class="ferr"></div>
+</div>
+<button class="fsub" id="cSubmitBtn" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Envoyer ma demande — sans engagement</button>
 <p class="fnote">Aucun engagement • Réponse garantie sous 48h • Données confidentielles</p>
 <p style="font-size:11px;color:var(--text3);text-align:center;margin-top:8px;line-height:1.5;max-width:420px;margin-left:auto;margin-right:auto">Vos données sont utilisées uniquement pour traiter votre demande. Aucun démarchage tiers. Conformément au RGPD, vous pouvez demander leur suppression à <a href="mailto:contact.a2fk@gmail.com" style="color:var(--text2);text-decoration:underline">contact.a2fk@gmail.com</a></p>
 </div>
@@ -908,7 +933,7 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
 <h3 class="mtit">Attendez !</h3>
 <p class="msub">Ne laissez pas passer <strong>des milliers d'euros de primes CEE</strong>. Obtenez votre audit gratuit avant de partir.</p>
 <div class="moffer"><div class="motag">Offre exclusive</div><div class="motit">Audit CEE offert — réponse sous 48h</div><div class="mosub">+ Estimation personnalisée sous 48h</div></div>
-<div class="mform"><input class="fi" type="email" id="mEmail" placeholder="Votre email professionnel"><button class="fsub" onclick="submitModal()"><i class="fas fa-gift"></i> Recevoir mon audit offert</button></div>
+<div class="mform"><input class="fi" type="email" id="mEmail" placeholder="Votre email professionnel"><div id="mEmailErr" class="ferr"></div><button class="fsub" onclick="submitModal()"><i class="fas fa-gift"></i> Recevoir mon audit offert</button></div>
 <p class="fnote">Aucun engagement • Réponse garantie sous 48h</p>
 </div>
 </div>
@@ -975,27 +1000,122 @@ function toggleMobile(){
   const l=document.querySelector('.nlinks');
   l.style.cssText=mobOpen?'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(7,9,15,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:20px;gap:4px;z-index:199':'';
 }
-function submitForm(){
-  const n=document.getElementById('cNom').value;
-  const e=document.getElementById('cEmail').value;
-  const t=document.getElementById('cTel').value;
-  const msg=document.querySelector('.cform textarea').value;
-  if(!n||!e||!t){alert('Merci de remplir les champs obligatoires (nom, email, téléphone).');return;}
-  const btn=document.querySelector('.cform .fsub');
+function fShowErr(id,msg){
+  const el=document.getElementById(id);
+  if(el){el.style.borderColor='#EF4444';}
+  const errEl=document.getElementById(id+'Err');
+  if(errEl){errEl.textContent=msg;errEl.style.display='block';}
+}
+function fClearErr(id){
+  const el=document.getElementById(id);
+  if(el){el.style.borderColor='';}
+  const errEl=document.getElementById(id+'Err');
+  if(errEl){errEl.textContent='';errEl.style.display='none';}
+}
+/* ── UPLOAD ── */
+const F_MAX_SIZE=10*1024*1024;
+const F_MAX_COUNT=3;
+const F_EXT=/\.(pdf|jpg|jpeg|png|dwg|doc|docx)$/i;
+let uploadedFiles=[];
+function fDragOver(e){e.preventDefault();document.getElementById('cDropZone').classList.add('drag-over');}
+function fDragLeave(){document.getElementById('cDropZone').classList.remove('drag-over');}
+function fDrop(e){e.preventDefault();document.getElementById('cDropZone').classList.remove('drag-over');fFilesAdd(e.dataTransfer.files);}
+function fFilesAdd(list){
+  const errEl=document.getElementById('cFileErr');
+  errEl.style.display='none';errEl.textContent='';
+  Array.from(list).forEach(f=>{
+    if(uploadedFiles.length>=F_MAX_COUNT){errEl.textContent='Maximum '+F_MAX_COUNT+' fichiers autorisés.';errEl.style.display='block';return;}
+    if(!F_EXT.test(f.name)){errEl.textContent='Format non accepté : '+f.name+' — PDF, JPG, PNG, DWG, DOC, DOCX uniquement.';errEl.style.display='block';return;}
+    if(f.size>F_MAX_SIZE){errEl.textContent='Fichier trop lourd — max 10 Mo : '+f.name;errEl.style.display='block';return;}
+    if(uploadedFiles.find(x=>x.name===f.name&&x.size===f.size))return;
+    uploadedFiles.push(f);
+  });
+  document.getElementById('cFiles').value='';
+  fRenderFiles();
+}
+function fFileDel(i){uploadedFiles.splice(i,1);fRenderFiles();}
+function fRenderFiles(){
+  const list=document.getElementById('cFileList');
+  list.innerHTML='';
+  uploadedFiles.forEach((f,i)=>{
+    const d=document.createElement('div');
+    d.className='ffile';
+    d.innerHTML='<i class="fas fa-paperclip" style="color:var(--text3);flex-shrink:0"></i>'
+      +'<span class="ffile-name">'+f.name+' <span style="color:var(--text3);font-size:11px">('+( f.size/1024/1024).toFixed(1)+' Mo)</span></span>'
+      +'<button class="ffile-del" onclick="fFileDel('+i+')" title="Supprimer"><i class="fas fa-times"></i></button>';
+    list.appendChild(d);
+  });
+}
+function fEncodeFiles(){
+  return Promise.all(uploadedFiles.map(f=>new Promise((res,rej)=>{
+    const r=new FileReader();
+    r.onload=()=>res({name:f.name,size:f.size,b64:r.result.split(',')[1]});
+    r.onerror=rej;
+    r.readAsDataURL(f);
+  })));
+}
+async function submitForm(){
+  const n=document.getElementById('cNom').value.trim();
+  const soc=document.getElementById('cSoc').value.trim();
+  const e=document.getElementById('cEmail').value.trim();
+  const t=document.getElementById('cTel').value.trim();
+  const bat=document.getElementById('cBat').value;
+  const surf=document.getElementById('cSurf').value;
+  const budget=document.getElementById('cBudget').value;
+  const stade=document.getElementById('cStade').value;
+  const d=document.getElementById('cDesc').value.trim();
+  let valid=true;
+  if(n.length<3||!/^[a-zA-ZÀ-ÿ\s\-']+$/.test(n)){fShowErr('cNom','Nom invalide — minimum 3 caractères, lettres et espaces uniquement.');valid=false;}else{fClearErr('cNom');}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){fShowErr('cEmail','Email invalide — doit contenir @ et un domaine valide.');valid=false;}else{fClearErr('cEmail');}
+  if(!/^0[0-9]{9}$/.test(t.replace(/[\s\-]/g,''))){fShowErr('cTel','Téléphone invalide — 10 chiffres commençant par 0 (ex: 06 XX XX XX XX).');valid=false;}else{fClearErr('cTel');}
+  if(d.length<20){fShowErr('cDesc','Description trop courte — minimum 20 caractères.');valid=false;}else{fClearErr('cDesc');}
+  if(!valid)return;
+  const btn=document.getElementById('cSubmitBtn');
   btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
   btn.disabled=true;
-  emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, {
-    from_name: n,
-    from_email: e,
-    phone: t,
-    message: msg || 'Aucune description fournie',
-    to_email: 'contact.a2fk@gmail.com'
+  /* Gestion pièces jointes */
+  const F_LIMIT=400*1024;
+  let attachInfo='Aucune pièce jointe.';
+  let attachWarning='';
+  if(uploadedFiles.length>0){
+    try{
+      const encoded=await fEncodeFiles();
+      const totalB64=encoded.reduce((acc,f)=>acc+f.b64.length,0);
+      if(totalB64>F_LIMIT){
+        attachInfo='Fichiers trop volumineux pour transmission automatique.\nFichiers : '+encoded.map(f=>f.name+' ('+(f.size/1024/1024).toFixed(1)+' Mo)').join(', ')+'\nMerci de les envoyer à contact.a2fk@gmail.com';
+        attachWarning='Vos fichiers sont trop volumineux pour être joints automatiquement. Merci de les envoyer directement à contact.a2fk@gmail.com';
+      }else{
+        attachInfo=encoded.map(f=>f.name+' ('+(f.size/1024/1024).toFixed(1)+' Mo)\ndata:application/octet-stream;base64,'+f.b64).join('\n---\n');
+      }
+    }catch(encErr){
+      console.error('Erreur encodage fichiers:',encErr);
+      attachInfo='Erreur lors du traitement des pièces jointes.';
+    }
+  }
+  emailjs.send(EJS_SERVICE_ID,EJS_TEMPLATE_ID,{
+    from_name:n,
+    from_email:e,
+    phone:t,
+    societe:soc||'Non renseigné',
+    batiment:bat,
+    surface:surf,
+    budget:budget,
+    stade:stade,
+    message:d,
+    attachments:attachInfo,
+    to_email:'contact.a2fk@gmail.com'
   }).then(()=>{
     btn.innerHTML='<i class="fas fa-check"></i> Demande envoyée ! Nous vous contactons sous 48h.';
     btn.style.background='linear-gradient(135deg,#10B981,#059669)';
+    if(attachWarning){
+      const w=document.createElement('p');
+      w.style.cssText='font-size:12px;color:#F59E0B;text-align:center;margin-top:10px';
+      w.innerHTML='<i class="fas fa-exclamation-triangle"></i> '+attachWarning;
+      btn.insertAdjacentElement('afterend',w);
+    }
   }).catch((err)=>{
-    console.error('EmailJS error:', err);
-    btn.innerHTML='<i class="fas fa-paper-plane"></i> Envoyer ma demande';
+    console.error('EmailJS error:',err);
+    btn.innerHTML='<i class="fas fa-paper-plane"></i> Envoyer ma demande — sans engagement';
     btn.disabled=false;
     alert('Erreur d\'envoi. Contactez-nous directement au 06 50 57 83 88 ou par email à contact.a2fk@gmail.com');
   });
@@ -1007,12 +1127,17 @@ function toggleBlog(el){
   if(!isOpen)card.classList.add('blog-open');
 }
 function submitModal(){
-  const e=document.getElementById('mEmail').value;
-  if(!e){alert("Merci d'entrer votre email.");return;}
+  const e=document.getElementById('mEmail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){fShowErr('mEmail','Email invalide — doit contenir @ et un domaine valide.');return;}
+  fClearErr('mEmail');
   document.getElementById('exitModal').classList.remove('open');
   document.getElementById('cEmail').value=e;
   document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 }
+['cNom','cSoc','cEmail','cTel','cDesc','mEmail'].forEach(id=>{
+  const el=document.getElementById(id);
+  if(el)el.addEventListener('focus',()=>fClearErr(id));
+});
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',ev=>{
     ev.preventDefault();
