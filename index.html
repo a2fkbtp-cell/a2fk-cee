@@ -834,6 +834,14 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
 <div class="fg"><label class="fl">Email professionnel *</label><input class="fi" type="email" id="cEmail" placeholder="jean@societe.fr"><div id="cEmailErr" class="ferr"></div></div>
 <div class="fg"><label class="fl">Téléphone *</label><input class="fi" type="tel" id="cTel" placeholder="06 XX XX XX XX"><div id="cTelErr" class="ferr"></div></div>
 </div>
+<div class="fg" id="siret-group">
+  <label class="fl">SIRET <span style="color:var(--text3);font-weight:400">(optionnel — auto-complète votre raison sociale)</span></label>
+  <div style="position:relative;display:flex;gap:8px">
+    <input class="fi" type="text" id="cSiret" placeholder="14 chiffres" maxlength="14" style="flex:1;padding-right:36px" oninput="this.value=this.value.replace(/\D/g,'')">
+    <div id="siret-status" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:13px"></div>
+  </div>
+  <div id="siret-result" style="display:none;margin-top:8px;padding:12px 14px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:8px;font-size:13px;color:var(--text2)"></div>
+</div>
 <div class="frow">
 <div class="fg"><label class="fl">Type de bâtiment</label><select class="fi" id="cBat"><option>Bureaux / Tertiaire</option><option>Hôtel / Hébergement</option><option>Commerce / Retail</option><option>Logement collectif</option><option>Industrie / Entrepôt</option><option>Établissement public</option><option>Autre</option></select></div>
 <div class="fg"><label class="fl">Surface approximative</label><select class="fi" id="cSurf"><option>Moins de 500 m²</option><option>500 à 1 000 m²</option><option>1 000 à 3 000 m²</option><option>3 000 à 5 000 m²</option><option>Plus de 5 000 m²</option></select></div>
@@ -1096,6 +1104,8 @@ function submitForm(){
     from_name: n,
     from_email: e,
     phone: t,
+    siret: document.getElementById('cSiret').value.trim() || 'Non renseigné',
+    company: document.getElementById('siret-result').textContent.trim() || 'Non renseigné',
     message: msg || 'Aucune description fournie',
     to_email: 'contact.a2fk@gmail.com'
   }).then(()=>{
@@ -1132,6 +1142,47 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     const t=document.querySelector(a.getAttribute('href'));
     if(t){t.scrollIntoView({behavior:'smooth'});}
   });
+});
+
+/* ── SIRET ── */
+document.getElementById('cSiret').addEventListener('blur', async function(){
+  const siret = this.value.trim();
+  const status = document.getElementById('siret-status');
+  const result = document.getElementById('siret-result');
+
+  if(siret.length === 0){result.style.display='none';status.textContent='';return;}
+  if(siret.length !== 14){status.textContent='❌';result.style.display='none';return;}
+
+  status.textContent='⏳';
+
+  try{
+    const res = await fetch('https://recherche-entreprises.api.gouv.fr/search?q='+siret+'&page=1&per_page=1');
+    const data = await res.json();
+
+    if(data.results && data.results.length > 0){
+      const co = data.results[0];
+      const nom = co.nom_complet || co.nom_raison_sociale || '';
+      const adresse = co.siege?.adresse || '';
+      const activite = co.activite_principale_libelle || '';
+      const naf = co.activite_principale || '';
+
+      status.textContent='✅';
+      result.style.display='block';
+      result.innerHTML='<div style="font-weight:600;color:var(--text);margin-bottom:4px">'+nom+'</div>'
+        +'<div style="color:var(--text3);font-size:12px">'+adresse+'</div>'
+        +'<div style="color:var(--text3);font-size:12px;margin-top:2px">'+naf+' — '+activite+'</div>';
+
+      const socField = document.getElementById('cSoc');
+      if(socField && socField.value.trim() === '') socField.value = nom;
+    }else{
+      status.textContent='❌';
+      result.style.display='block';
+      result.innerHTML='<span style="color:#EF4444">SIRET introuvable — vérifiez le numéro</span>';
+    }
+  }catch(err){
+    status.textContent='';
+    result.style.display='none';
+  }
 });
 
 /* ── CHATBOT ── */
