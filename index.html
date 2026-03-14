@@ -248,6 +248,11 @@ textarea.fi{resize:vertical;min-height:100px}
 .ffile-name{color:var(--text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
 .ffile-del{background:none;border:none;color:var(--text3);cursor:pointer;padding:0;font-size:15px;flex-shrink:0;line-height:1}
 .ffile-del:hover{color:#EF4444}
+.fi.valid{border-color:#10B981 !important;background:rgba(16,185,129,0.04)}
+.fi.invalid{border-color:#EF4444 !important;background:rgba(239,68,68,0.04)}
+.input-wrap{position:relative}
+.input-wrap .fi{padding-right:36px}
+.input-icon{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:13px;pointer-events:none}
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32px 32px}
 .footi{max-width:1240px;margin:0 auto}
 .foottop{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
@@ -826,21 +831,26 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
 </div>
 <div class="cform fu fd2">
 <h3 class="cftit">Démarrer mon audit — sans engagement</h3>
+<div style="padding:16px;background:rgba(14,165,233,0.04);border:1px solid rgba(14,165,233,0.15);border-radius:12px;margin-bottom:24px">
+  <p style="font-size:12px;color:var(--text3);font-family:var(--mono);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px">Raccourci — optionnel</p>
+  <label class="fl" style="margin-bottom:6px">Tapez le nom de votre entreprise pour auto-remplir</label>
+  <div style="position:relative">
+    <input class="fi" type="text" id="cCompanySearch" placeholder="Ex: Neocity, Cabinet L'Adresse..." autocomplete="off" oninput="searchCompany(this.value)">
+    <div id="company-dropdown" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;margin-top:4px;z-index:100;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4)"></div>
+  </div>
+  <div id="company-selected" style="display:none;margin-top:10px;padding:10px 14px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:8px;font-size:13px"></div>
+</div>
 <div class="frow">
 <div class="fg"><label class="fl">Nom &amp; Prénom *</label><input class="fi" type="text" id="cNom" placeholder="Jean Dupont"><div id="cNomErr" class="ferr"></div></div>
-<div class="fg"><label class="fl">Société / Organisation</label><input class="fi" type="text" id="cSoc" placeholder="Nom de votre société"></div>
+<div class="fg"><label class="fl">Société / Raison sociale</label><input class="fi" type="text" id="cSociete" placeholder="Nom de votre entreprise"></div>
+</div>
+<div class="frow">
+<div class="fg"><label class="fl">SIRET</label><input class="fi" type="text" id="cSiretNum" placeholder="Auto-rempli via le raccourci" readonly style="background:var(--surface);color:var(--text3)"></div>
+<div class="fg"><label class="fl">Adresse du siège</label><input class="fi" type="text" id="cAdresse" placeholder="Auto-remplie" style="background:var(--bg3)"></div>
 </div>
 <div class="frow">
 <div class="fg"><label class="fl">Email professionnel *</label><input class="fi" type="email" id="cEmail" placeholder="jean@societe.fr"><div id="cEmailErr" class="ferr"></div></div>
 <div class="fg"><label class="fl">Téléphone *</label><input class="fi" type="tel" id="cTel" placeholder="06 XX XX XX XX"><div id="cTelErr" class="ferr"></div></div>
-</div>
-<div class="fg" id="siret-group">
-  <label class="fl">SIRET <span style="color:var(--text3);font-weight:400">(optionnel — auto-complète votre raison sociale)</span></label>
-  <div style="position:relative;display:flex;gap:8px">
-    <input class="fi" type="text" id="cSiret" placeholder="14 chiffres" maxlength="14" style="flex:1;padding-right:36px" oninput="this.value=this.value.replace(/\D/g,'')">
-    <div id="siret-status" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:13px"></div>
-  </div>
-  <div id="siret-result" style="display:none;margin-top:8px;padding:12px 14px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:8px;font-size:13px;color:var(--text2)"></div>
 </div>
 <div class="frow">
 <div class="fg"><label class="fl">Type de bâtiment</label><select class="fi" id="cBat"><option>Bureaux / Tertiaire</option><option>Hôtel / Hébergement</option><option>Commerce / Retail</option><option>Logement collectif</option><option>Industrie / Entrepôt</option><option>Établissement public</option><option>Autre</option></select></div>
@@ -1104,8 +1114,8 @@ function submitForm(){
     from_name: n,
     from_email: e,
     phone: t,
-    siret: document.getElementById('cSiret').value.trim() || 'Non renseigné',
-    company: document.getElementById('siret-result').textContent.trim() || 'Non renseigné',
+    siret: document.getElementById('cCompanySearch').dataset.siret || 'Non renseigné',
+    company: document.getElementById('cCompanySearch').dataset.company || document.getElementById('cCompanySearch').value.trim() || 'Non renseigné',
     message: msg || 'Aucune description fournie',
     to_email: 'contact.a2fk@gmail.com'
   }).then(()=>{
@@ -1132,10 +1142,55 @@ function submitModal(){
   document.getElementById('cEmail').value=e;
   document.getElementById('contact').scrollIntoView({behavior:'smooth'});
 }
-['cNom','cSoc','cEmail','cTel','cDesc','mEmail'].forEach(id=>{
+['cNom','cSociete','cEmail','cTel','cDesc','mEmail'].forEach(id=>{
   const el=document.getElementById(id);
   if(el)el.addEventListener('focus',()=>fClearErr(id));
 });
+
+function validateField(fieldId, validatorFn){
+  const field = document.getElementById(fieldId);
+  if(!field) return;
+
+  field.parentElement.classList.add('input-wrap');
+
+  let icon = field.parentElement.querySelector('.input-icon');
+  if(!icon){ icon = document.createElement('span'); icon.className='input-icon'; field.parentElement.appendChild(icon); }
+
+  field.addEventListener('blur', function(){
+    const val = this.value.trim();
+    if(val === ''){
+      this.classList.remove('valid','invalid');
+      icon.textContent='';
+      return;
+    }
+    if(validatorFn(val)){
+      this.classList.add('valid');
+      this.classList.remove('invalid');
+      icon.textContent='✓';
+      icon.style.color='#10B981';
+      document.querySelector('[data-error="'+fieldId+'"]')?.remove();
+    } else {
+      this.classList.add('invalid');
+      this.classList.remove('valid');
+      icon.textContent='✕';
+      icon.style.color='#EF4444';
+    }
+  });
+
+  field.addEventListener('focus', function(){
+    this.classList.remove('invalid');
+    icon.textContent='';
+    document.querySelector('[data-error="'+fieldId+'"]')?.remove();
+  });
+}
+
+validateField('cNom',      v => v.length >= 3);
+validateField('cEmail',    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+validateField('cTel',      v => /^0[0-9][\s.-]?([0-9]{2}[\s.-]?){4}$/.test(v));
+validateField('cDesc',     v => v.length >= 20);
+validateField('cSociete',  v => v.length >= 2);
+validateField('cSiretNum', v => v.length >= 9);
+validateField('cAdresse',  v => v.length >= 5);
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',ev=>{
     ev.preventDefault();
@@ -1144,45 +1199,88 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
   });
 });
 
-/* ── SIRET ── */
-document.getElementById('cSiret').addEventListener('blur', async function(){
-  const siret = this.value.trim();
-  const status = document.getElementById('siret-status');
-  const result = document.getElementById('siret-result');
+/* ── RECHERCHE ENTREPRISE ── */
+let searchTimer;
+async function searchCompany(val){
+  const dropdown = document.getElementById('company-dropdown');
+  clearTimeout(searchTimer);
+  if(val.length < 3){ dropdown.style.display='none'; return; }
 
-  if(siret.length === 0){result.style.display='none';status.textContent='';return;}
-  if(siret.length !== 14){status.textContent='❌';result.style.display='none';return;}
+  searchTimer = setTimeout(async () => {
+    try {
+      const res = await fetch('https://recherche-entreprises.api.gouv.fr/search?q='+encodeURIComponent(val)+'&page=1&per_page=5');
+      const data = await res.json();
 
-  status.textContent='⏳';
+      if(!data.results || data.results.length === 0){ dropdown.style.display='none'; return; }
 
-  try{
-    const res = await fetch('https://recherche-entreprises.api.gouv.fr/search?q='+siret+'&page=1&per_page=1');
-    const data = await res.json();
+      dropdown.innerHTML = data.results.map(co => {
+        const nom = co.nom_complet || co.nom_raison_sociale || 'Nom inconnu';
+        const siren = co.siren || '';
+        const siret = co.siege?.siret || (siren ? siren + '00000' : '');
+        const adresse = co.siege?.adresse || co.siege?.commune || '';
+        const nafCode = co.activite_principale || '';
+        const naf = co.activite_principale_libelle || '';
+        const nomE = nom.replace(/'/g,"\\'").replace(/"/g,'\\"');
+        const siretE = siret.replace(/'/g,"\\'").replace(/"/g,'\\"');
+        const adresseE = adresse.replace(/'/g,"\\'").replace(/"/g,'\\"');
+        const nafE = naf.replace(/'/g,"\\'").replace(/"/g,'\\"');
+        return '<div onclick="selectCompany(\''+nomE+'\',\''+siretE+'\',\''+adresseE+'\',\''+nafE+'\',\''+nafCode+'\')"'
+          +' style="padding:12px 16px;cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.15s"'
+          +' onmouseover="this.style.background=\'var(--surface)\'" onmouseout="this.style.background=\'transparent\'">'
+          +'<div style="font-size:14px;font-weight:600;color:var(--text)">'+nom+'</div>'
+          +'<div style="font-size:12px;color:var(--text3);font-family:var(--mono)">'+(siret||siren)+' · '+nafCode+'</div>'
+          +'<div style="font-size:11px;color:var(--text3);margin-top:2px">'+adresse+'</div>'
+          +'</div>';
+      }).join('');
 
-    if(data.results && data.results.length > 0){
-      const co = data.results[0];
-      const nom = co.nom_complet || co.nom_raison_sociale || '';
-      const adresse = co.siege?.adresse || '';
-      const activite = co.activite_principale_libelle || '';
-      const naf = co.activite_principale || '';
+      dropdown.style.display='block';
 
-      status.textContent='✅';
-      result.style.display='block';
-      result.innerHTML='<div style="font-weight:600;color:var(--text);margin-bottom:4px">'+nom+'</div>'
-        +'<div style="color:var(--text3);font-size:12px">'+adresse+'</div>'
-        +'<div style="color:var(--text3);font-size:12px;margin-top:2px">'+naf+' — '+activite+'</div>';
-
-      const socField = document.getElementById('cSoc');
-      if(socField && socField.value.trim() === '') socField.value = nom;
-    }else{
-      status.textContent='❌';
-      result.style.display='block';
-      result.innerHTML='<span style="color:#EF4444">SIRET introuvable — vérifiez le numéro</span>';
+    } catch(e){
+      console.error('API error:', e);
+      dropdown.style.display='none';
     }
-  }catch(err){
-    status.textContent='';
-    result.style.display='none';
-  }
+  }, 350);
+}
+
+function selectCompany(nom, siret, adresse, naf, nafCode){
+  const input = document.getElementById('cCompanySearch');
+  const dropdown = document.getElementById('company-dropdown');
+  const selected = document.getElementById('company-selected');
+
+  input.value = nom;
+  input.dataset.siret = siret;
+  input.dataset.company = nom;
+  dropdown.style.display='none';
+
+  const societeField = document.getElementById('cSociete');
+  const siretField = document.getElementById('cSiretNum');
+  const adresseField = document.getElementById('cAdresse');
+
+  if(societeField) societeField.value = nom;
+  if(siretField) siretField.value = siret;
+  if(adresseField) adresseField.value = adresse;
+
+  ['cSociete','cSiretNum','cAdresse'].forEach(id => {
+    const field = document.getElementById(id);
+    if(field && field.value.trim() !== ''){
+      field.dispatchEvent(new Event('blur'));
+    }
+  });
+
+  selected.style.display='block';
+  selected.innerHTML=''
+    +'<div style="font-weight:600;color:#10B981;margin-bottom:6px">✅ '+nom+'</div>'
+    +'<div style="display:flex;gap:16px;flex-wrap:wrap">'
+      +'<div style="color:var(--text3);font-size:12px;font-family:var(--mono)">SIRET : <strong style="color:var(--text2)">'+(siret||'N/A')+'</strong></div>'
+      +'<div style="color:var(--text3);font-size:12px">NAF : <strong style="color:var(--text2)">'+nafCode+'</strong></div>'
+    +'</div>'
+    +'<div style="color:var(--text3);font-size:12px;margin-top:4px">'+adresse+'</div>'
+    +'<div style="color:var(--text3);font-size:12px;margin-top:2px">'+naf+'</div>';
+}
+
+document.addEventListener('click', function(e){
+  if(!e.target.closest('#cCompanySearch') && !e.target.closest('#company-dropdown'))
+    document.getElementById('company-dropdown').style.display='none';
 });
 
 /* ── CHATBOT ── */
