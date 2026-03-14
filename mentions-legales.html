@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentions légales — A2FK</title>
+<meta name="description" content="Mentions légales d'A2FK, mandataire technique CEE & trading multi-acteurs en Occitanie.">
+<meta name="robots" content="noindex, follow">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--bg2:#0b0f18;--bg3:#0f1520;--surface:#131926;--border:#1e2a3d;--border2:#253348;--primary:#0EA5E9;--pdim:rgba(14,165,233,0.1);--pglow:rgba(14,165,233,0.25);--accent:#10B981;--adim:rgba(16,185,129,0.1);--aglow:rgba(16,185,129,0.25);--alert:#F59E0B;--altdim:rgba(245,158,11,0.1);--danger:#EF4444;--ddim:rgba(239,68,68,0.1);--text:#e8edf5;--text2:#8899b0;--text3:#4a5a6e;--mono:'IBM Plex Mono',monospace;--sans:'Inter',sans-serif;--disp:'Figtree',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(7,9,15,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.navi{max-width:1240px;margin:0 auto;padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nlogo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.lmark{width:40px;height:40px;background:linear-gradient(135deg,#0EA5E9,#10B981);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lmark svg{width:22px;height:22px;fill:white}
+.lname{font-family:var(--disp);font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.5px;display:block}
+.lsub{font-size:10px;font-weight:600;background:linear-gradient(90deg,#0EA5E9,#10B981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.1em;display:block;font-family:var(--mono)}
+.bcta{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:linear-gradient(135deg,#0EA5E9,#10B981);color:white;font-weight:600;font-size:13px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all 0.25s;white-space:nowrap;font-family:var(--sans)}
+.bcta:hover{transform:translateY(-2px);box-shadow:0 8px 30px var(--pglow)}
+
+/* MAIN CONTENT */
+.ml-wrap{max-width:860px;margin:0 auto;padding:80px 32px}
+.ml-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--text3);text-decoration:none;font-family:var(--mono);margin-bottom:48px;transition:color 0.2s}
+.ml-back:hover{color:#0EA5E9}
+.ml-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#0EA5E9;margin-bottom:16px}
+.ml-tag::before,.ml-tag::after{content:'';display:block;width:24px;height:1px;background:#0EA5E9;opacity:0.5}
+.ml-title{font-family:var(--disp);font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-1.5px;line-height:1.08;margin-bottom:12px}
+.ml-date{font-family:var(--mono);font-size:12px;color:var(--text3);margin-bottom:64px}
+.ml-section{margin-bottom:48px;padding:32px;background:var(--bg2);border:1px solid var(--border);border-radius:16px}
+.ml-section-title{font-family:var(--disp);font-size:18px;font-weight:700;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.ml-section-title .ml-num{width:28px;height:28px;border-radius:50%;background:var(--pdim);border:1px solid rgba(14,165,233,0.3);color:#0EA5E9;font-family:var(--mono);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ml-row{display:flex;flex-direction:column;gap:10px}
+.ml-item{display:flex;gap:12px;font-size:15px;line-height:1.6}
+.ml-label{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;min-width:160px;flex-shrink:0;padding-top:2px}
+.ml-value{color:var(--text2)}
+.ml-value a{color:#0EA5E9;text-decoration:none;transition:color 0.2s}
+.ml-value a:hover{color:#38bdf8}
+.ml-value strong{color:var(--text)}
+.ml-placeholder{display:inline-block;background:var(--altdim);border:1px solid rgba(245,158,11,0.3);color:var(--alert);font-family:var(--mono);font-size:12px;padding:2px 8px;border-radius:4px}
+.ml-text{font-size:15px;color:var(--text2);line-height:1.8}
+.ml-text + .ml-text{margin-top:12px}
+.ml-footer-back{margin-top:64px;padding-top:40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:40px 32px 28px}
+.footi{max-width:1240px;margin:0 auto}
+.footbot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.footcopy{font-size:13px;color:var(--text3)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .navi{padding:0 20px}
+  .ml-wrap{padding:48px 20px}
+  .ml-item{flex-direction:column;gap:2px}
+  .ml-label{min-width:unset}
+  .ml-footer-back{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="navi">
+  <a href="a2fk-v4 VERSION FINALE 1303.html" class="nlogo">
+    <div class="lmark"><svg viewBox="0 0 24 24"><rect x="3" y="14" width="3" height="7" rx="1"/><rect x="8" y="10" width="3" height="11" rx="1"/><rect x="13" y="6" width="3" height="15" rx="1"/><rect x="18" y="10" width="3" height="11" rx="1"/><path d="M4.5 14L9.5 10L14.5 6L19.5 10" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div><span class="lname">A2FK</span><span class="lsub">Expert Trading CEE</span></div>
+  </a>
+  <a href="a2fk-v4 VERSION FINALE 1303.html#contact" class="bcta"><i class="fas fa-rocket" style="font-size:12px"></i> Estimer ma prime</a>
+</div></nav>
+
+<main class="ml-wrap">
+
+  <a href="a2fk-v4 VERSION FINALE 1303.html" class="ml-back"><i class="fas fa-arrow-left"></i> Retour au site</a>
+
+  <div class="ml-tag">Légal</div>
+  <h1 class="ml-title">Mentions légales</h1>
+  <p class="ml-date">Dernière mise à jour : mars 2026</p>
+
+  <!-- Section 1 -->
+  <div class="ml-section">
+    <h2 class="ml-section-title"><span class="ml-num">1</span> Éditeur du site</h2>
+    <div class="ml-row">
+      <div class="ml-item">
+        <span class="ml-label">Raison sociale</span>
+        <span class="ml-value"><strong>A2FK</strong></span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Activité</span>
+        <span class="ml-value">Mandataire Technique CEE &amp; Trading Multi-Acteurs</span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Responsable</span>
+        <span class="ml-value">Farid Khemici</span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Adresse</span>
+        <span class="ml-value">Juvignac, Hérault (34)</span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Email</span>
+        <span class="ml-value"><a href="mailto:contact.a2fk@gmail.com">contact.a2fk@gmail.com</a></span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Téléphone</span>
+        <span class="ml-value"><a href="tel:0650578388">06 50 57 83 88</a></span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">SIRET</span>
+        <span class="ml-value">90860335000012</span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Forme juridique</span>
+        <span class="ml-value">SASU</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="ml-section">
+    <h2 class="ml-section-title"><span class="ml-num">2</span> Hébergement</h2>
+    <div class="ml-row">
+      <div class="ml-item">
+        <span class="ml-label">Hébergeur</span>
+        <span class="ml-value"><strong>Vercel Inc.</strong></span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Adresse</span>
+        <span class="ml-value">340 Pine Street, Suite 701, San Francisco, CA 94104, USA</span>
+      </div>
+      <div class="ml-item">
+        <span class="ml-label">Site</span>
+        <span class="ml-value"><a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="ml-section">
+    <h2 class="ml-section-title"><span class="ml-num">3</span> Propriété intellectuelle</h2>
+    <p class="ml-text">Tous les contenus présents sur ce site (textes, visuels, structure) sont la propriété exclusive d'A2FK. Toute reproduction partielle ou totale est interdite sans autorisation écrite préalable.</p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="ml-section">
+    <h2 class="ml-section-title"><span class="ml-num">4</span> Données personnelles (RGPD)</h2>
+    <p class="ml-text">Les données collectées via le formulaire de contact (nom, email, téléphone, description du projet) sont utilisées uniquement pour traiter votre demande. Elles ne sont ni cédées ni vendues à des tiers.</p>
+    <p class="ml-text" style="margin-top:12px">Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données en écrivant à <a href="mailto:contact.a2fk@gmail.com">contact.a2fk@gmail.com</a>. Les données sont conservées <strong>3 ans maximum</strong>.</p>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="ml-section">
+    <h2 class="ml-section-title"><span class="ml-num">5</span> Cookies</h2>
+    <p class="ml-text">Ce site n'utilise pas de cookies de tracking ou publicitaires. Les seules données techniques collectées sont celles nécessaires au bon fonctionnement du formulaire de contact (EmailJS).</p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="ml-section">
+    <h2 class="ml-section-title"><span class="ml-num">6</span> Responsabilité</h2>
+    <p class="ml-text">A2FK s'efforce de maintenir les informations de ce site à jour. Les estimations de primes CEE présentées sont indicatives et ne constituent pas un engagement contractuel. Seul un audit personnalisé permet une valorisation précise.</p>
+  </div>
+
+  <div class="ml-footer-back">
+    <a href="a2fk-v4 VERSION FINALE 1303.html" class="ml-back" style="margin-bottom:0"><i class="fas fa-arrow-left"></i> Retour au site</a>
+    <a href="a2fk-v4 VERSION FINALE 1303.html#contact" class="bcta"><i class="fas fa-rocket" style="font-size:12px"></i> Estimer ma prime</a>
+  </div>
+
+</main>
+
+<footer><div class="footi">
+  <div class="footbot">
+    <span class="footcopy">© 2025 A2FK — Expert Trading CEE &amp; Valorisation Énergétique. Tous droits réservés.</span>
+    <span style="font-size:13px;color:var(--text3);display:flex;align-items:center;gap:6px"><i class="fas fa-shield-alt" style="color:#10B981"></i> Mandataire CEE agréé Emmy | Période 6 CEE 2026–2030</span>
+  </div>
+</div></footer>
+
+</body>
+</html>
