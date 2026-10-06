@@ -1128,13 +1128,23 @@ function submitForm(){
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
   btn.disabled = true;
 
+  const NR = 'Non renseigné';
+  const fVal = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  const fSel = id => { const el = document.getElementById(id); return el && el.selectedIndex > 0 ? el.options[el.selectedIndex].text.trim() : NR; };
+  const shortcut = document.getElementById('cCompanySearch');
+
   emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, {
     from_name: n,
     from_email: e,
     phone: t,
-    siret: document.getElementById('cCompanySearch').dataset.siret || 'Non renseigné',
-    company: document.getElementById('cCompanySearch').dataset.company || document.getElementById('cCompanySearch').value.trim() || 'Non renseigné',
-    message: msg || 'Aucune description fournie',
+    siret: fVal('cSiretNum') || shortcut.dataset.siret || NR,
+    company: fVal('cSociete') || shortcut.dataset.company || shortcut.value.trim() || NR,
+    address: fVal('cAdresse') || NR,
+    building_type: fSel('typeBatContact'),
+    surface: fSel('surfaceContact'),
+    budget: fSel('budgetContact'),
+    project_stage: fSel('stadeContact'),
+    message: msg || NR,
     to_email: 'contact@a2fk.fr'
   }).then(()=>{
     btn.innerHTML='<i class="fas fa-check"></i> Demande envoyée ! Nous vous contactons sous 48h.';
