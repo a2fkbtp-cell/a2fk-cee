@@ -5,14 +5,14 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'><rect width='44' height='44' rx='10' fill='%2307090f'/><line x1='10' y1='36' x2='10' y2='22' stroke='%23253348' stroke-width='2' stroke-linecap='round'/><line x1='18' y1='36' x2='18' y2='14' stroke='%23253348' stroke-width='2' stroke-linecap='round'/><line x1='26' y1='36' x2='26' y2='18' stroke='%23253348' stroke-width='2' stroke-linecap='round'/><line x1='34' y1='36' x2='34' y2='26' stroke='%23253348' stroke-width='2' stroke-linecap='round'/><line x1='7' y1='36' x2='37' y2='36' stroke='%23253348' stroke-width='1.5' stroke-linecap='round'/><path d='M7 36 C14 26 22 10 37 5' fill='none' stroke='%230EA5E9' stroke-width='2.5' stroke-linecap='round'/><circle cx='37' cy='5' r='3' fill='%2310B981'/></svg>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A2FK — Mandataire Technique CEE & Trading Multi-Acteurs | Occitanie</title>
-<meta name="description" content="A2FK, mandataire technique CEE & trading multi-acteurs en Occitanie. Mise en concurrence de 8 à 10 délégataires, mandataires et obligés. +10 à +20% sur vos primes CEE tertiaires et logement collectif. Audit gratuit sous 48h.">
+<meta name="description" content="A2FK, mandataire technique CEE & trading multi-acteurs en Occitanie. Mise en concurrence de 8 à 10 délégataires, mandataires et obligés. Audit gratuit sous 48h.">
 <meta name="keywords" content="mandataire CEE, trading CEE, certificats économies énergie, prime CEE tertiaire, logement collectif CEE, Occitanie, Montpellier, délégataire CEE, audit CEE gratuit">
 <meta name="author" content="A2FK — Farid Khemici">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://a2fk.fr/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="A2FK — Mandataire Technique CEE & Trading Multi-Acteurs">
-<meta property="og:description" content="A2FK, mandataire technique CEE & trading multi-acteurs en Occitanie. Mise en concurrence de 8 à 10 délégataires, mandataires et obligés. +10 à +20% sur vos primes CEE tertiaires et logement collectif. Audit gratuit sous 48h.">
+<meta property="og:description" content="A2FK, mandataire technique CEE & trading multi-acteurs en Occitanie. Mise en concurrence de 8 à 10 délégataires, mandataires et obligés. Audit gratuit sous 48h.">
 <meta property="og:url" content="https://a2fk.fr/">
 <meta property="og:site_name" content="A2FK">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -97,6 +97,12 @@ h1{font-family:var(--disp);font-size:clamp(37px,5.95vw,71px);font-weight:900;lin
 .eicon{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
 .eib{background:var(--pdim)}.eig{background:var(--adim)}.eia{background:var(--altdim)}
 .etit{font-family:var(--disp);font-size:20px;font-weight:700;margin-bottom:12px}
+.amo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.amo-ico{font-size:22px}
+.amo-note{margin-top:24px;padding:18px 22px;background:var(--surface);border:1px solid var(--border);border-left:3px solid #10B981;border-radius:10px;font-size:15px;color:var(--text);line-height:1.6}
+.amo-remu{margin-top:14px;font-size:14px;color:var(--text2);line-height:1.7}
+@media(max-width:1100px){.amo-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.amo-grid{grid-template-columns:1fr}}
 .elist{list-style:none;display:flex;flex-direction:column;gap:8px}
 .elist li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.5}
 .elist li i{color:#0EA5E9;margin-top:3px;font-size:11px;flex-shrink:0}
@@ -153,6 +159,13 @@ h1{font-family:var(--disp);font-size:clamp(37px,5.95vw,71px);font-weight:900;lin
 .projf{padding:20px 32px;border-top:1px solid var(--border);background:var(--surface)}
 .projins{font-size:13px;color:var(--text2);line-height:1.6}
 .projins strong{color:#0EA5E9}
+.proj-eur{font-family:var(--mono);color:#10B981;white-space:nowrap}
+.proj-tot{flex-wrap:wrap;gap:6px 12px}
+.proj-totnote{font-size:12px;color:var(--text2)}
+.proj-one{padding:28px 32px}
+.proj-concl{font-family:var(--disp);font-size:17px;font-weight:700;color:var(--text);line-height:1.5;border-left:3px solid #10B981;padding-left:14px}
+.proj-note{font-size:12px;color:var(--text3);font-style:italic;margin:-8px 0 24px}
+@media(max-width:600px){.projh,.projb,.proj-one,.projf{padding-left:20px;padding-right:20px}}
 .calcwrap{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;max-width:820px;margin:0 auto}
 .calch{padding:28px 32px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(14,165,233,0.05),rgba(16,185,129,0.05))}
 .calcht{font-family:var(--disp);font-size:24px;font-weight:700;margin-bottom:6px}
@@ -352,27 +365,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 </head>
 <body>
 
-<div class="ticker-wrap"><div class="ticker-track">
-<div class="ti"><span class="dot"></span>Cours CEE P6 <span class="tblue">6,80 €/MWh cumac</span></div>
-<div class="ti"><span class="dot"></span>Primes versées 2024 — <span class="tup">0,4 M€</span></div>
-<div class="ti"><span class="dot"></span>Primes versées 2025 — <span class="tup">0,8 M€</span></div>
-<div class="ti"><span class="dot"></span>Tendance 7j <span class="tup">▲ +3,2%</span></div>
-<div class="ti"><span class="dot"></span>Projets en négociation <span class="tblue">23</span></div>
-<div class="ti"><span class="dot"></span>Gain moyen client <span class="tup">+15%</span></div>
-<div class="ti"><span class="dot"></span>Délai moyen <span class="tblue">62 jours</span></div>
-<div class="ti"><span class="dot"></span>Prochain bilan <span class="twarn">Juillet 2026</span></div>
-<div class="ti"><span class="dot"></span>Cours CEE P6 <span class="tblue">6,80 €/MWh cumac</span></div>
-<div class="ti"><span class="dot"></span>Primes versées 2024 — <span class="tup">0,4 M€</span></div>
-<div class="ti"><span class="dot"></span>Primes versées 2025 — <span class="tup">0,8 M€</span></div>
-<div class="ti"><span class="dot"></span>Tendance 7j <span class="tup">▲ +3,2%</span></div>
-<div class="ti"><span class="dot"></span>Projets en négociation <span class="tblue">23</span></div>
-<div class="ti"><span class="dot"></span>Gain moyen client <span class="tup">+15%</span></div>
-<div class="ti"><span class="dot"></span>Délai moyen <span class="tblue">62 jours</span></div>
-<div class="ti"><span class="dot"></span>Prochain bilan <span class="twarn">Juillet 2026</span></div>
-</div></div>
-
-<div class="abanner"><span class="apill">PÉRIODE 6 CEE</span><span>Nouvelle période 2026–2030 — <strong style="color:#F59E0B">Agissez dès maintenant</strong> pour sécuriser votre prime au meilleur cours</span></div>
-
 <nav><div class="navi">
 <a href="#" class="nlogo">
   <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -389,7 +381,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
   </svg>
   <div><span class="lname">A2FK</span><span class="lsub">MANDATAIRE TECHNIQUE CEE &amp; TRADING</span></div>
 </a>
-<div class="nlinks"><a href="#expertise">Expertise</a><a href="#processus">Processus</a><a href="#projets">Projets</a><a href="#temoignages">Témoignages</a><a href="#calculateur">Simulateur</a><a href="#faq">FAQ</a><a href="#blog">Blog</a></div>
+<div class="nlinks"><a href="#amo">AMO</a><a href="#expertise">Expertise</a><a href="#processus">Processus</a><a href="#projets">Projets</a><a href="#temoignages">Témoignages</a><a href="#faq">FAQ</a><a href="#blog">Blog</a></div>
 <a href="tel:0650578388" class="nav-phone" style="display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;border:1px solid var(--border2);color:var(--text2);text-decoration:none;font-size:12px;font-weight:600;transition:all 0.2s;white-space:nowrap" onmouseover="this.style.borderColor='#10B981';this.style.color='#10B981'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text2)'"><i class="fas fa-phone" style="font-size:11px"></i> 06 50 57 83 88</a>
 <a href="#contact" class="bcta" style="padding:9px 16px;font-size:13px"><i class="fas fa-rocket" style="font-size:12px"></i> Estimer ma prime</a>
 <button class="mbtn" onclick="toggleMobile()"><i class="fas fa-bars"></i> Menu</button>
@@ -399,39 +391,46 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <div class="hbadges fu"><span class="pill pb"><i class="fas fa-chart-line"></i> Expert Trading CEE</span><span class="pill pg"><i class="fas fa-users"></i> Multi-Acteurs</span><span class="pill pa"><i class="fas fa-shield-alt"></i> Mandataire Mixte</span><span class="pill pr"><i class="fas fa-clock"></i> Période 6 2026-2030</span></div>
 <h1 class="fu fd2">30–200k€ de Primes CEE<br/><span class="gt">Négociées au Meilleur Cours</span></h1>
 <p class="hsub fu fd2">Nous mettons en concurrence <strong>DÉLÉGATAIRES + MANDATAIRES + OBLIGÉS</strong> pour vous garantir le meilleur taux CEE selon le cours et votre opération.</p>
-<p class="hgain fu fd2"><span class="ga">Gain moyen : +15% vs. contact direct unique</span></p>
-<div class="hact fu fd3"><a href="#calculateur" class="bcta xl"><i class="fas fa-calculator"></i> Calculer mon potentiel CEE</a><a href="#expertise" class="bout"><i class="fas fa-info-circle"></i> Découvrir notre méthode</a></div>
+<div class="hact fu fd3"><a href="#contact" class="bcta xl"><i class="fas fa-calculator"></i> Calculer mon potentiel CEE</a><a href="#expertise" class="bout"><i class="fas fa-info-circle"></i> Découvrir notre méthode</a></div>
 <div class="htrust fu fd3">
-<div class="titem"><i class="fas fa-check-circle"></i> Aucune avance de frais</div>
-<div class="titem"><i class="fas fa-check-circle"></i> Rémunération au succès</div>
-<div class="titem"><i class="fas fa-check-circle"></i> Pas de prime = pas de facturation</div>
-<div class="titem"><i class="fas fa-check-circle"></i> Registre Emmy certifié</div>
+<div class="titem"><i class="fas fa-check-circle"></i> Mission AMO sur devis</div>
+<div class="titem"><i class="fas fa-check-circle"></i> Valorisation CEE au succès</div>
+<div class="titem"><i class="fas fa-check-circle"></i> Aucune avance de frais sur le volet CEE</div>
 </div>
 </div></section>
 
-<div class="stats-sec"><div class="stats-in">
-<div class="scard fu"><div class="snum"><span class="cnt" data-t="120">0</span></div><div class="slabel">Projets valorisés</div></div>
-<div class="scard fu fd2"><div class="snum"><span class="cnt" data-t="1.2" data-d="1">0</span>M€</div><div class="slabel">Primes négociées 2024-2025</div></div>
-<div class="scard fu fd2"><div class="snum">+<span class="cnt" data-t="15">0</span>%</div><div class="slabel">Gain moyen vs. direct</div></div>
-<div class="scard fu fd3"><div class="snum"><span class="cnt" data-t="62">0</span>j</div><div class="slabel">Délai moyen</div></div>
-</div></div>
+<section id="amo" class="sec"><div class="secin">
+<div class="sech fu"><h2 class="sectit">AMO énergétique <span class="gt">360°</span></h2><p class="secsub">Avant la prime, il y a l'arbitrage. J'interviens en appui du maître d'ouvrage, de l'audit énergétique au contrôle des travaux.</p></div>
+<div class="amo-grid">
+<div class="ecard fu"><div class="eicon eib"><i class="fas fa-building amo-ico" style="color:#0EA5E9"></i></div><h3 class="etit">Comprendre l'actif</h3><ul class="elist"><li><i class="fas fa-circle"></i>Audit énergétique réalisé par un réseau national de bureaux d'études partenaires, mobilisable rapidement</li><li><i class="fas fa-circle"></i>Analyse des consommations et des factures d'énergie</li><li><i class="fas fa-circle"></i>Lecture des audits, DPE et comités verts existants</li><li><i class="fas fa-circle"></i>Scénarios de travaux chiffrés en capex et en économies</li><li><i class="fas fa-circle"></i>Priorisation sur un portefeuille : où agir en premier</li></ul></div>
+<div class="ecard fu fd2"><div class="eicon eig"><i class="fas fa-file-invoice-dollar amo-ico" style="color:#10B981"></i></div><h3 class="etit">Sécuriser la dépense</h3><ul class="elist"><li><i class="fas fa-circle"></i>Métrés et projet de DCE à partir des plans et du CCTP</li><li><i class="fas fa-circle"></i>Vérification des devis ligne à ligne, ratios comparés aux prix pratiqués</li><li><i class="fas fa-circle"></i>Mise en concurrence des offres</li><li><i class="fas fa-circle"></i>Visa AMO Devis : un avis express sur un devis avant signature</li></ul></div>
+<div class="ecard fu"><div class="eicon eia"><i class="fas fa-scale-balanced amo-ico" style="color:#F59E0B"></i></div><h3 class="etit">Anticiper la réglementation</h3><ul class="elist"><li><i class="fas fa-circle"></i>Décret tertiaire et déclarations OPERAT</li><li><i class="fas fa-circle"></i>Décret BACS : assujettissement et niveau de GTB à viser</li><li><i class="fas fa-circle"></i>Loi APER et F-Gas : ce qui contraindra les prochains travaux</li></ul></div>
+<div class="ecard fu fd2"><div class="eicon eib"><i class="fas fa-hand-holding-dollar amo-ico" style="color:#0EA5E9"></i></div><h3 class="etit">Financer</h3><ul class="elist"><li><i class="fas fa-circle"></i>Étude des financements complémentaires aux CEE</li><li><i class="fas fa-circle"></i>Financements intégrés à la décision : le coût net, pas le coût brut</li><li><i class="fas fa-circle"></i>Valorisation CEE, du montage au versement</li></ul></div>
+<div class="ecard fu"><div class="eicon eig"><i class="fas fa-solar-panel amo-ico" style="color:#10B981"></i></div><h3 class="etit">Réduire et produire</h3><ul class="elist"><li><i class="fas fa-circle"></i>Énergies renouvelables : photovoltaïque, solaire thermique, ballons thermodynamiques</li><li><i class="fas fa-circle"></i>Optimisation et récupération de chaleur</li><li><i class="fas fa-circle"></i>Pilotage et supervision des installations</li><li><i class="fas fa-circle"></i>Contrats d'énergie optimisés avec des fournisseurs partenaires, pour les sites les plus consommateurs</li></ul></div>
+</div>
+<p class="amo-remu">Un réseau de partenaires en place : bureaux d'études, installateurs d'énergies renouvelables, intégrateurs GTB et supervision, fournisseurs d'énergie.</p>
+<div class="fu">
+<div class="amo-note">Je travaille en appui de la maîtrise d'œuvre, des bureaux d'études et des gestionnaires, sans me substituer à eux.</div>
+<p class="amo-remu">La mission AMO est réalisée sur devis. Sur les opérations d'un volume important, elle peut être incluse dans la valorisation CEE. La valorisation CEE est rémunérée au succès, sans avance de frais.</p>
+<div style="text-align:center;margin-top:28px"><a href="#contact" class="bcta xl"><i class="fas fa-comments"></i> Parler de mon projet</a></div>
+</div>
+</div></section>
 
 <section id="expertise" class="sec"><div class="secin">
-<div class="sech fu"><div class="sectag">Notre expertise</div><h2 class="sectit">Trading CEE<br/><span class="gt">Multi-Acteurs</span></h2><p class="secsub">Pourquoi A2FK obtient systématiquement +10 à +20% de plus qu'un contact direct unique</p></div>
+<div class="sech fu"><div class="sectag">Notre expertise</div><h2 class="sectit">Trading CEE<br/><span class="gt">Multi-Acteurs</span></h2></div>
 <div class="egrid">
-<div class="ecard fu"><div class="eicon eib">📊</div><h3 class="etit">Analyse Multi-Facteurs</h3><ul class="elist"><li><i class="fas fa-circle"></i>Cours CEE temps réel (€/MWh cumac)</li><li><i class="fas fa-circle"></i>Type d'opération (fiche CEE spécifique)</li><li><i class="fas fa-circle"></i>Volume kWh cumac estimé</li><li><i class="fas fa-circle"></i>Localisation géographique</li><li><i class="fas fa-circle"></i>Timing dans la période CEE</li></ul></div>
-<div class="ecard fu fd2"><div class="eicon eig">🏆</div><h3 class="etit">Mise en Concurrence</h3><ul class="elist"><li><i class="fas fa-circle"></i>8 à 10 acteurs consultés simultanément</li><li><i class="fas fa-circle"></i>Délégataires agréés Emmy</li><li><i class="fas fa-circle"></i>Mandataires spécialisés</li><li><i class="fas fa-circle"></i>Obligés directs (énergéticiens)</li><li><i class="fas fa-circle"></i>Négociation à haut niveau</li></ul></div>
-<div class="ecard fu fd3"><div class="eicon eia">🛡️</div><h3 class="etit">Gestion Complète</h3><ul class="elist"><li><i class="fas fa-circle"></i>Audit de conformité des devis</li><li><i class="fas fa-circle"></i>Constitution des dossiers CEE</li><li><i class="fas fa-circle"></i>Calcul optimisé des kWh cumac</li><li><i class="fas fa-circle"></i>Suivi jusqu'au versement</li><li><i class="fas fa-circle"></i>Aucune avance de frais</li></ul></div>
+<div class="ecard fu"><div class="eicon eib">📊</div><h3 class="etit">Analyse Multi-Facteurs</h3><ul class="elist"><li><i class="fas fa-circle"></i>Type d'opération (fiche CEE spécifique)</li><li><i class="fas fa-circle"></i>Volume kWh cumac estimé</li><li><i class="fas fa-circle"></i>Localisation géographique</li><li><i class="fas fa-circle"></i>Timing dans la période CEE</li></ul></div>
+<div class="ecard fu fd2"><div class="eicon eig">🏆</div><h3 class="etit">Mise en Concurrence</h3><ul class="elist"><li><i class="fas fa-circle"></i>8 à 10 acteurs consultés simultanément</li><li><i class="fas fa-circle"></i>Délégataires</li><li><i class="fas fa-circle"></i>Mandataires spécialisés</li><li><i class="fas fa-circle"></i>Obligés directs (énergéticiens)</li><li><i class="fas fa-circle"></i>Négociation à haut niveau</li></ul></div>
+<div class="ecard fu fd3"><div class="eicon eia">🛡️</div><h3 class="etit">Gestion Complète</h3><ul class="elist"><li><i class="fas fa-circle"></i>Audit de conformité des devis</li><li><i class="fas fa-circle"></i>Constitution des dossiers CEE</li><li><i class="fas fa-circle"></i>Calcul optimisé des kWh cumac</li><li><i class="fas fa-circle"></i>Suivi jusqu'au versement</li><li><i class="fas fa-circle"></i>Aucune avance de frais sur le volet CEE</li></ul></div>
 </div>
 <div style="margin-top:48px" class="fu">
 <div class="sectag" style="justify-content:flex-start;margin-bottom:20px">A2FK vs. contact direct</div>
 <div class="ccard"><table class="ctable"><thead><tr><th>Critère</th><th>Contact direct unique</th><th class="wc">A2FK — Multi-acteurs ✓</th></tr></thead><tbody>
 <tr><td>Acteurs consultés</td><td class="dc">1 seul</td><td class="wc">8 à 10 simultanément</td></tr>
 <tr><td>Négociation du taux</td><td class="dc"><i class="fas fa-times cx"></i> Pas de levier</td><td class="wc"><i class="fas fa-check ck"></i> Mise en concurrence réelle</td></tr>
-<tr><td>Gain moyen</td><td class="dc">Taux de base</td><td class="wc">+10 à +20%</td></tr>
 <tr><td>Vérification devis</td><td class="dc"><i class="fas fa-times cx"></i> À votre charge</td><td class="wc"><i class="fas fa-check ck"></i> Audit complet inclus</td></tr>
 <tr><td>Constitution dossier</td><td class="dc"><i class="fas fa-times cx"></i> À votre charge</td><td class="wc"><i class="fas fa-check ck"></i> 100% géré</td></tr>
-<tr><td>Risque financier</td><td class="dc">Avance possible</td><td class="wc"><i class="fas fa-check ck"></i> Zéro — succès uniquement</td></tr>
+<tr><td>Risque financier</td><td class="dc">Avance possible</td><td class="wc"><i class="fas fa-check ck"></i> Volet CEE au succès, sans avance</td></tr>
 </tbody></table></div>
 </div>
 </div></section>
@@ -442,69 +441,97 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <div class="pstep fu"><div class="pleft"><div class="pnum">1</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 1 — 48H</div><h3 class="ptit">Audit &amp; Analyse des Travaux</h3><p class="pdesc">Analyse de vos devis, plans et descriptifs pour identifier toutes les opérations valorisables. Vérification de conformité, calcul des kWh cumac, identification des fiches PNCEE applicables.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> Conformité devis</span><span class="pitem"><i class="fas fa-check"></i> Fiches PNCEE</span><span class="pitem"><i class="fas fa-check"></i> Volume estimé</span></div></div></div>
 <div class="pstep fu"><div class="pleft"><div class="pnum">2</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 2 — 5 JOURS</div><h3 class="ptit">Mise en Concurrence Multi-Acteurs</h3><p class="pdesc">Consultation simultanée de 8 à 10 acteurs CEE (délégataires, mandataires, obligés). Analyse comparative des offres en tenant compte du cours, des conditions et des délais.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> 8-10 acteurs</span><span class="pitem"><i class="fas fa-check"></i> Délai 5 jours</span><span class="pitem"><i class="fas fa-check"></i> Analyse comparative</span></div></div></div>
 <div class="pstep fu"><div class="pleft"><div class="pnum">3</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 3 — 3 JOURS</div><h3 class="ptit">Négociation &amp; Sélection</h3><p class="pdesc">Négociation intensive avec les 2-3 meilleurs acteurs pour maximiser votre taux. Sélection de la meilleure offre selon taux, conditions et sécurité juridique.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> Négociation active</span><span class="pitem"><i class="fas fa-check"></i> Meilleur taux</span><span class="pitem"><i class="fas fa-check"></i> Sécurité juridique</span></div></div></div>
-<div class="pstep fu"><div class="pleft"><div class="pnum">4</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 4 — 4-8 SEMAINES</div><h3 class="ptit">Constitution du Dossier CEE</h3><p class="pdesc">Collecte des documents, vérification des attestations, calcul final des kWh cumac, rédaction et dépôt du dossier complet auprès du délégataire sélectionné.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> Documents complets</span><span class="pitem"><i class="fas fa-check"></i> Vérification finale</span><span class="pitem"><i class="fas fa-check"></i> Dépôt dossier</span></div></div></div>
-<div class="pstep fu"><div class="pleft"><div class="pnum">5</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 5 — VERSEMENT</div><h3 class="ptit">Versement de la Prime</h3><p class="pdesc">Une fois votre dossier validé par le financeur, la prime est versée directement sur votre compte. Notre rémunération est uniquement basée sur les montants réellement perçus, pour un alignement total de nos intérêts.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> Versement direct</span><span class="pitem"><i class="fas fa-check"></i> Commission au succès</span><span class="pitem"><i class="fas fa-check"></i> Traçabilité totale</span></div></div></div>
+<div class="pstep fu"><div class="pleft"><div class="pnum">4</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 4 — 4-8 SEMAINES</div><h3 class="ptit">Constitution du Dossier CEE</h3><p class="pdesc">Collecte des documents, vérification des attestations, calcul final des kWh cumac, constitution et transmission du dossier complet au financeur retenu.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> Documents complets</span><span class="pitem"><i class="fas fa-check"></i> Vérification finale</span><span class="pitem"><i class="fas fa-check"></i> Transmission au financeur</span></div></div></div>
+<div class="pstep fu"><div class="pleft"><div class="pnum">5</div><div class="pline"></div></div><div class="pcont"><div class="ptag">ÉTAPE 5 — VERSEMENT</div><h3 class="ptit">Versement de la Prime</h3><p class="pdesc">Une fois votre dossier validé par le financeur, la prime est versée directement sur votre compte. La valorisation CEE est rémunérée au succès.</p><div class="pitems"><span class="pitem"><i class="fas fa-check"></i> Versement direct</span><span class="pitem"><i class="fas fa-check"></i> Rémunération au succès</span><span class="pitem"><i class="fas fa-check"></i> Traçabilité totale</span></div></div></div>
 </div></div>
 </div></section>
 
 <section id="projets" class="sec"><div class="secin">
-<div class="sech fu"><div class="sectag">Cas concrets</div><h2 class="sectit">Négociations <span class="gt">Réussies</span></h2><p class="secsub">Projets réels avec détails techniques et gains obtenus</p></div>
+<div class="sech fu"><h2 class="sectit">Études et <span class="gt">exemples</span></h2><p class="secsub">Montants exprimés en prime estimée, en euros. Les cas réels sont anonymisés.</p></div>
 
 <div class="projcard fu">
-<div class="projh"><div><div class="projtit">🏨 Hôtel 3★ — Toulouse (31)</div><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill pb">Hôtellerie</span><span class="pill pg">3 200 m²</span><span class="pill pa">2024</span></div></div><div class="projamt"><div class="projamt-lbl">Prime négociée</div><div class="projamt-num">45 000 €</div></div></div>
-<div class="projb">
-<div><div class="pst">Lots techniques valorisés</div><div class="lotlist">
-<div class="lot"><div class="lotn">ITE façades (BAT-EN-102)</div><div class="lotd">850 m² • R=4,2 m².K/W • 2 450 MWh cumac</div></div>
-<div class="lot"><div class="lotn">Menuiseries PVC (BAT-EN-104)</div><div class="lotd">42 fenêtres • Uw=1,2 W/m².K • 890 MWh cumac</div></div>
-<div class="lot"><div class="lotn">PAC air/eau (BAT-TH-104)</div><div class="lotd">85 kW • ETAS 118% • 1 820 MWh cumac</div></div>
-<div class="lot"><div class="lotn">LED + détection (BAT-EQ-127)</div><div class="lotd">280 points lumineux • 115 lm/W • 650 MWh cumac</div></div>
-<div class="lot"><div class="lotn">Régulation chauffage (BAT-TH-125)</div><div class="lotd">32 zones • Programmation horaire • 480 MWh cumac</div></div>
-</div><div class="lottot"><span class="lottot-l">Total volume</span><span class="lottot-n">6 290 MWh cumac</span></div></div>
-<div><div class="pst">Négociation multi-acteurs</div>
-<table class="ntable">
-<tr><td>Délégataire A</td><td>38 000 €<small style="color:var(--text3);display:block">6,04 €/MWh</small></td></tr>
-<tr><td>Mandataire B</td><td>41 000 €<small style="color:var(--text3);display:block">6,52 €/MWh</small></td></tr>
-<tr class="win"><td>✅ Obligé C — Sélectionné</td><td>45 000 €<small style="display:block">7,15 €/MWh</small></td></tr>
-</table>
-<div class="gainbox"><div class="gainlbl">GAIN A2FK</div><div class="gainnum">+7 000 € (+18,4%)</div><div class="gainsub">vs. première offre reçue</div></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
-<div class="lot" style="text-align:center"><div class="lotd">Budget travaux</div><div class="lotn">680 000 €</div></div>
-<div class="lot" style="text-align:center"><div class="lotd">Délai total</div><div class="lotn">62 jours</div></div>
+<div class="projh"><div>
+<div style="margin-bottom:12px"><span class="pill pg">Étude AMO — cas réel</span></div>
+<h3 class="projtit">Immeuble de bureaux — environ 4&nbsp;000&nbsp;m²</h3>
+<div class="lotd" style="margin-bottom:14px;color:var(--text2)">Zone H1 · Marché CVC signé</div>
+<p class="projins">Le maître d'ouvrage remplaçait ses centrales de traitement d'air et créait une régulation. Une offre de prime de 24&nbsp;000&nbsp;€ lui avait été remise. Mission : vérifier cette offre et identifier ce qui restait mobilisable autour du marché, sans le remettre en cause.</p>
 </div></div>
+<div class="projb">
+<div><div class="pst">Le marché signé</div><div class="lotlist">
+<div class="lot"><div class="lotn">Pompe à chaleur air/air — 198&nbsp;m² : <span class="proj-eur">1&nbsp;400&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Ventilation double flux — 3&nbsp;397&nbsp;m² : <span class="proj-eur">12&nbsp;100&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Gestion technique du bâtiment — environ 4&nbsp;000&nbsp;m² : <span class="proj-eur">10&nbsp;000&nbsp;€</span></div></div>
+</div><div class="lottot proj-tot"><span class="lottot-l">Total estimé : <span class="lottot-n">23&nbsp;500&nbsp;€</span></span> <span class="proj-totnote">— offre reçue de 24&nbsp;000&nbsp;€ jugée correcte</span></div></div>
+<div><div class="pst">Ce que l'étude a ajouté</div><ul class="elist">
+<li><i class="fas fa-circle"></i><span>Niveau de régulation non précisé au dossier : le faire spécifier vaut environ 7&nbsp;600&nbsp;€ de plus, sans surcoût matériel.</span></li>
+<li><i class="fas fa-circle"></i><span>Prime proposée au forfait : faire préciser la forme de rémunération, pour que tout gain de volume revienne au bénéficiaire.</span></li>
+<li><i class="fas fa-circle"></i><span>Enveloppe mobilisable séparément : plancher bas, 620&nbsp;m², 13&nbsp;000&nbsp;€ ; toiture-terrasse, 1&nbsp;000&nbsp;m², 11&nbsp;300&nbsp;€.</span></li>
+<li><i class="fas fa-circle"></i><span>Production de chaleur, pour mémoire (Coup de Pouce Chauffage) : une pompe à chaleur air/eau sans dépose de chaudière rapporte 9&nbsp;300&nbsp;€ pour 191&nbsp;700&nbsp;€ de travaux ; raccordée aux émetteurs avec dépose d'une chaudière, elle rapporte 110&nbsp;500&nbsp;€ pour 227&nbsp;000 à 256&nbsp;000&nbsp;€ de travaux.</span></li>
+</ul></div>
 </div>
-<div class="projf"><p class="projins"><strong>Pourquoi l'obligé C a gagné ?</strong> Volume important (6 290 MWh) + hôtellerie = profil recherché par les obligés énergéticiens en fin de période. Timing parfait et négociation d'un taux de 7,15 €/MWh (vs. 6,04 en direct), soit +18% sur la première offre reçue.</p></div>
+<div class="projf"><p class="proj-concl">Même équipement, prime multipliée par douze : tout se joue sur le raccordement et la dépose, à décider au dossier de consultation.</p></div>
 </div>
 
 <div class="projcard fu">
-<div class="projh"><div><div class="projtit">🏢 Bureaux Tertiaires — Lyon (69)</div><div style="display:flex;gap:8px;flex-wrap:wrap"><span class="pill pb">Bureaux</span><span class="pill pg">5 800 m²</span><span class="pill pa">2024</span></div></div><div class="projamt"><div class="projamt-lbl">Prime négociée</div><div class="projamt-num">94 000 €</div></div></div>
-<div class="projb">
-<div><div class="pst">Lots techniques valorisés</div><div class="lotlist">
-<div class="lot"><div class="lotn">Toiture terrasse (BAT-EN-101)</div><div class="lotd">1 450 m² • R=6,5 m².K/W • 3 680 MWh cumac</div></div>
-<div class="lot"><div class="lotn">ITE façades (BAT-EN-102)</div><div class="lotd">2 200 m² • R=4,8 m².K/W • 5 120 MWh cumac</div></div>
-<div class="lot"><div class="lotn">Chaudière condensation (BAT-TH-116)</div><div class="lotd">250 kW • ETAS 96% • 2 450 MWh cumac</div></div>
-<div class="lot"><div class="lotn">VMC double flux (BAT-TH-125)</div><div class="lotd">12 000 m³/h • Efficacité 92% • 1 280 MWh cumac</div></div>
-<div class="lot"><div class="lotn">LED intelligents (BAT-EQ-127)</div><div class="lotd">520 luminaires • 125 lm/W • Détection • 980 MWh cumac</div></div>
-</div><div class="lottot"><span class="lottot-l">Total volume</span><span class="lottot-n">14 400 MWh cumac</span></div></div>
-<div><div class="pst">Négociation multi-acteurs</div>
-<table class="ntable">
-<tr><td>Délégataire X</td><td>78 000 €<small style="color:var(--text3);display:block">5,42 €/MWh</small></td></tr>
-<tr><td>Délégataire Y</td><td>86 000 €<small style="color:var(--text3);display:block">5,97 €/MWh</small></td></tr>
-<tr class="win"><td>✅ Mandataire Z — Sélectionné</td><td>94 000 €<small style="display:block">6,53 €/MWh</small></td></tr>
-</table>
-<div class="gainbox"><div class="gainlbl">GAIN A2FK</div><div class="gainnum">+16 000 € (+20,5%)</div><div class="gainsub">vs. première offre reçue</div></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
-<div class="lot" style="text-align:center"><div class="lotd">Budget travaux</div><div class="lotn">1 240 000 €</div></div>
-<div class="lot" style="text-align:center"><div class="lotd">Délai total</div><div class="lotn">78 jours</div></div>
+<div class="projh"><div>
+<div style="margin-bottom:12px"><span class="pill pg">Dossier en cours — cas réel</span></div>
+<h3 class="projtit">Établissement d'enseignement — environ 3&nbsp;900&nbsp;m²</h3>
+<div class="lotd" style="margin-bottom:14px;color:var(--text2)">Occitanie · Zone H3 · Bâtiments occupés</div>
+<p class="projins">Réhabilitation de deux bâtiments de bureaux en établissement d'enseignement, pour un propriétaire institutionnel. Mission : identifier et sécuriser la prime, contrôler le lot isolation de la visite préalable à la mise en œuvre.</p>
 </div></div>
+<div class="projb">
+<div><div class="pst">Opérations</div><div class="lotlist">
+<div class="lot"><div class="lotn">Pompe à chaleur air/air</div></div>
+<div class="lot"><div class="lotn">Ventilation double flux</div></div>
+<div class="lot"><div class="lotn">Gestion technique du bâtiment</div></div>
+<div class="lot"><div class="lotn">Isolation du plancher bas sur parking</div></div>
+</div><div class="lottot proj-tot"><span class="lottot-l">Prime : environ <span class="lottot-n">30&nbsp;000&nbsp;€</span><span class="proj-totnote">, versée directement au propriétaire</span></span></div></div>
+<div><div class="pst">Ce que j'ai apporté</div><ul class="elist">
+<li><i class="fas fa-circle"></i><span>Visite avant travaux, avec photos horodatées et géolocalisées : preuve de l'état initial.</span></li>
+<li><i class="fas fa-circle"></i><span>Contrôle du devis isolation : prix conformes au marché, métré juste.</span></li>
+<li><i class="fas fa-circle"></i><span>Visite de mise en œuvre : continuité de l'isolant aux jonctions, arrêts propres, coordination de chantier vérifiée.</span></li>
+<li><i class="fas fa-circle"></i><span>Cohérence garantie entre surface déclarée, surface facturée et surface attestée.</span></li>
+<li><i class="fas fa-circle"></i><span>Environ 40&nbsp;% du poste isolation pris en charge par la prime.</span></li>
+</ul></div>
 </div>
-<div class="projf"><p class="projins"><strong>Pourquoi le mandataire Z a gagné ?</strong> Cumul optimal de fiches (enveloppe + CVC + LED). Le mandataire Z avait un besoin spécifique de volumes tertiaires ce mois-là. Timing parfait + profil recherché = 6,53 €/MWh, soit +20% sur la première offre reçue à 5,42 €/MWh.</p></div>
 </div>
 
-<div class="fu" style="text-align:center;padding:40px;background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.2);border-radius:16px;margin-top:8px">
-<h3 style="font-family:var(--disp);font-size:24px;font-weight:700;margin-bottom:10px">Vous voulez le même résultat ?</h3>
-<p style="color:var(--text2);margin-bottom:24px;font-size:16px">Chaque projet est unique. Notre expertise identifie le meilleur acteur et le bon timing pour votre cas spécifique.</p>
-<a href="#contact" class="bcta xl"><i class="fas fa-rocket"></i> Démarrer mon audit gratuit</a>
+<div class="projcard fu">
+<div class="projh"><div>
+<div style="margin-bottom:12px"><span class="pill pa">Exemple illustratif</span></div>
+<h3 class="projtit">Hôtel — 3&nbsp;200&nbsp;m²</h3>
+<div class="lotd" style="margin-bottom:14px;color:var(--text2)">Occitanie · Zone H2 · Sortie du fossile</div>
+<p class="projins">Remplacement d'une chaufferie fioul ou gaz par une pompe à chaleur, avec dépose de la chaudière, dans le cadre du Coup de Pouce Chauffage des bâtiments tertiaires.</p>
+</div></div>
+<div class="proj-one">
+<div class="pst">Opérations</div><div class="lotlist">
+<div class="lot"><div class="lotn">Pompe à chaleur air/eau avec dépose de la chaudière (Coup de Pouce) — 3&nbsp;200&nbsp;m² : <span class="proj-eur">40&nbsp;500&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Isolation des murs — 850&nbsp;m² : <span class="proj-eur">15&nbsp;500&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Ventilation hygroréglable — 3&nbsp;200&nbsp;m² : <span class="proj-eur">7&nbsp;300&nbsp;€</span></div></div>
+</div><div class="lottot proj-tot"><span class="lottot-l">Total estimé : <span class="lottot-n">63&nbsp;300&nbsp;€</span></span></div>
 </div>
+</div>
+<p class="proj-note">Exemple calculé sur les forfaits en vigueur. Montant indicatif, à confirmer par étude.</p>
+
+<div class="projcard fu">
+<div class="projh"><div>
+<div style="margin-bottom:12px"><span class="pill pa">Exemple illustratif</span></div>
+<h3 class="projtit">Immeuble de bureaux — 5&nbsp;800&nbsp;m²</h3>
+<div class="lotd" style="margin-bottom:14px;color:var(--text2)">Rhône · Zone H1 · Rénovation enveloppe et systèmes</div>
+<p class="projins">Programme combinant isolation de l'enveloppe, ventilation et pilotage, sur un immeuble occupé.</p>
+</div></div>
+<div class="proj-one">
+<div class="pst">Opérations</div><div class="lotlist">
+<div class="lot"><div class="lotn">Isolation de la toiture-terrasse — 1&nbsp;450&nbsp;m² : <span class="proj-eur">16&nbsp;300&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Isolation des murs — 2&nbsp;200&nbsp;m² : <span class="proj-eur">42&nbsp;500&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Gestion technique du bâtiment — 5&nbsp;800&nbsp;m² : <span class="proj-eur">14&nbsp;400&nbsp;€</span></div></div>
+<div class="lot"><div class="lotn">Ventilation double flux — 5&nbsp;800&nbsp;m² : <span class="proj-eur">20&nbsp;600&nbsp;€</span></div></div>
+</div><div class="lottot proj-tot"><span class="lottot-l">Total estimé : <span class="lottot-n">93&nbsp;800&nbsp;€</span></span></div>
+</div>
+</div>
+<p class="proj-note">Exemple calculé sur les forfaits en vigueur. Montant indicatif, à confirmer par étude.</p>
+
+<div class="fu" style="text-align:center;margin-top:32px"><a href="#contact" class="bcta xl"><i class="fas fa-paper-plane"></i> Soumettre mon projet</a></div>
 </div></section>
 
 <section id="temoignages" class="sec" style="background:var(--bg2)"><div class="secin">
@@ -553,48 +580,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 </div>
 </div></section>
 
-<section style="background:linear-gradient(135deg,#0a1520,#080e1a);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 32px">
-<div style="max-width:1240px;margin:0 auto">
-<div class="sech fu"><div class="sectag">Pourquoi maintenant</div><h2 class="sectit">⏰ Fenêtre d'Opportunité<br/><span class="gt">6 Mois Restants</span></h2><p class="secsub">Période 6 CEE 2026–2030 : conditions optimales dès maintenant</p></div>
-<div class="ugrid">
-<div class="ucard fu"><div class="uicon">📅</div><h3 class="utit">Période 6 CEE 2026–2030</h3><ul class="ulist"><li><i class="fas fa-check-circle" style="color:#10B981"></i>Nouvelle période démarrée en 2026</li><li><i class="fas fa-check-circle" style="color:#10B981"></i>Coefficients favorables pour certaines opérations</li><li><i class="fas fa-exclamation-triangle" style="color:#F59E0B"></i>Anticipez les révisions de fiches en cours de période</li><li><i class="fas fa-exclamation-triangle" style="color:#F59E0B"></i>Agissez tôt pour capter les meilleurs cours</li></ul></div>
-<div class="ucard fu fd2"><div class="uicon">💹</div><h3 class="utit">Cours CEE Favorable</h3><ul class="ulist"><li><i class="fas fa-chart-line" style="color:#0EA5E9"></i>6,50 €/MWh cumac actuellement</li><li><i class="fas fa-chart-line" style="color:#0EA5E9"></i>Tendance haussière (+3,2% sur 7 jours)</li><li><i class="fas fa-chart-line" style="color:#0EA5E9"></i>Volatilité attendue en fin de période</li><li><i class="fas fa-check-circle" style="color:#10B981"></i>Opportunité de négociation maximale</li></ul></div>
-<div class="ucard fu"><div class="uicon">🎯</div><h3 class="utit">Projets en Cours</h3><ul class="ulist"><li><i class="fas fa-exclamation-triangle" style="color:#F59E0B"></i>Devis signés ? Pas trop tard si travaux non démarrés</li><li><i class="fas fa-exclamation-triangle" style="color:#F59E0B"></i>Chantier en cours ? Valorisation possible sous conditions</li><li><i class="fas fa-check-circle" style="color:#10B981"></i>Anticiper = maximiser les kWh cumac</li><li><i class="fas fa-check-circle" style="color:#10B981"></i>Audit urgent recommandé</li></ul></div>
-<div class="ucard fu fd2"><div class="uicon">⚡</div><h3 class="utit">Délais à Anticiper</h3><ul class="ulist"><li><i class="fas fa-clock" style="color:#0EA5E9"></i>Audit → versement : 45 à 90 jours</li><li><i class="fas fa-clock" style="color:#0EA5E9"></i>Plus vous attendez, plus vous risquez</li><li><i class="fas fa-exclamation-triangle" style="color:#F59E0B"></i>Saturation possible des acteurs CEE</li><li><i class="fas fa-check-circle" style="color:#10B981"></i>Agir maintenant = sécuriser la prime</li></ul></div>
-</div>
-<div class="ucta fu"><div style="font-size:40px;margin-bottom:14px">🔥</div><h3 style="font-family:var(--disp);font-size:28px;font-weight:800;margin-bottom:10px">Période 6 : agissez dès maintenant</h3><p style="color:var(--text2);font-size:16px;margin-bottom:24px;max-width:560px;margin-left:auto;margin-right:auto">Période 6 2026–2030 : conditions optimales dès maintenant. Anticipez les ajustements réglementaires à venir.</p><a href="#contact" class="bcta xl"><i class="fas fa-bolt"></i> Sécuriser ma prime maintenant</a></div>
-</div></section>
-
-<section id="calculateur" class="sec sec-alt"><div class="secin">
-<div class="sech fu"><div class="sectag">Simulateur en ligne</div><h2 class="sectit">Estimez votre <span class="gt">Prime CEE</span></h2><p class="secsub">Calculez en temps réel votre potentiel de valorisation</p></div>
-<div class="calcwrap fu">
-<div class="calch"><h3 class="calcht">Simulateur CEE — A2FK</h3><p class="calchs">Estimation basée sur le cours indicatif P6 : 6,80 €/MWh cumac — contactez-nous pour une valorisation précise</p></div>
-<div class="calcb">
-<div class="frow">
-<div class="fg"><label class="fl">Type de bâtiment</label><select class="fi" id="typeBat" onchange="liveCalc()"><option value="hotel">Hôtel / Hébergement</option><option value="bureaux">Bureaux / Tertiaire</option><option value="commerce">Commerce / Retail</option><option value="logement">Logement collectif</option><option value="industrie">Industrie / Entrepôt</option><option value="public">Établissement public</option></select></div>
-<div class="fg"><label class="fl">Type de travaux</label><select class="fi" id="travaux" onchange="liveCalc()"><option value="multi">Multi-lots (isolation + chauffage + LED)</option><option value="isolation">Isolation thermique</option><option value="chauffage">Chauffage / PAC / Chaudière</option><option value="led">Éclairage LED</option><option value="pilotage">Pilotage / GTB / VMC</option></select></div>
-</div>
-<div class="fg">
-<label class="fl">Surface concernée : <span id="surfLbl" style="color:#0EA5E9">1 000 m²</span></label>
-<div class="rwrap"><input type="range" id="surf" min="200" max="10000" step="50" value="1000" oninput="onRange()"><span class="rval" id="surfV">1 000 m²</span></div>
-</div>
-<button class="bcta" style="width:100%;justify-content:center;padding:15px;margin-bottom:0" onclick="doCalc()"><i class="fas fa-calculator"></i> Calculer ma prime estimée</button>
-<div id="CR" class="calcres">
-<div class="rgrid">
-<div class="rc"><div class="rl">Volume estimé</div><div class="rn" id="rVol">—</div><div class="ru">MWh cumac</div></div>
-<div class="rc"><div class="rl">Prime sans A2FK</div><div class="rn" id="rDir">—</div><div class="ru">contact direct unique</div></div>
-<div class="rc hl"><div class="rl">Avec A2FK (min +10%)</div><div class="rn" id="rMin">—</div><div class="ru">estimation basse</div></div>
-</div>
-<div class="rgrid" style="grid-template-columns:1fr 1fr">
-<div class="rc hl"><div class="rl">Avec A2FK (max +20%)</div><div class="rn" id="rMax">—</div><div class="ru">estimation haute</div></div>
-<div class="rc"><div class="rl">Gain potentiel</div><div class="rn" id="rGain">—</div><div class="ru">par rapport au direct</div></div>
-</div>
-<div class="gsum"><span class="gsumt">Votre gain grâce à la mise en concurrence A2FK</span><span class="gsumn">+10 à +20%</span></div>
-<div style="text-align:center;margin-top:20px"><a href="#contact" class="bcta"><i class="fas fa-paper-plane"></i> Obtenir mon estimation personnalisée</a><p style="font-size:12px;color:var(--text3);margin-top:10px">Estimation indicative. Audit gratuit pour validation précise.</p></div>
-</div>
-</div></div>
-</div></section>
-
 <section class="sec"><div class="secin">
 <div class="sech fu"><div class="sectag">Conditions d'éligibilité</div><h2 class="sectit">Mon projet est-il <span class="gt">éligible CEE ?</span></h2></div>
 <div class="eligrid fu" style="margin-bottom:48px">
@@ -620,22 +605,22 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <div class="ckitem"><div class="cknum">4</div><div><div class="cktit">Date et signature</div><div class="ckdesc">Antériorité obligatoire : devis signé AVANT début des travaux</div></div></div>
 <div class="ckitem"><div class="cknum">5</div><div><div class="cktit">Qualification RGE si requise</div><div class="ckdesc">Selon fiche CEE : mention de la certification RGE de l'entreprise</div></div></div>
 </div>
-<div style="margin-top:16px;padding:16px 20px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:10px;font-size:14px;color:var(--text2)"><strong style="color:#10B981">Notre valeur ajoutée :</strong> Nous vérifions TOUT cela à l'étape 1 (Audit) pour éviter tout rejet ultérieur.</div>
+<div style="margin-top:16px;padding:16px 20px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:10px;font-size:14px;color:var(--text2)">Je vérifie l'ensemble de ces points dès l'étape 1, avant signature.</div>
 </div>
 <div class="fu" style="margin-top:56px">
 <h3 style="font-family:var(--disp);font-size:24px;font-weight:700;margin-bottom:8px">Fiches PNCEE — Opérations éligibles</h3>
 <p style="color:var(--text2);font-size:14px;margin-bottom:20px">Exemples de fiches courantes du Programme National des CEE</p>
 <div class="fgrid">
-<div class="fitem"><span class="fcode">BAT-EN-101</span><span class="fname">Isolation toiture terrasse</span></div>
-<div class="fitem"><span class="fcode">BAT-EN-102</span><span class="fname">ITE façades</span></div>
-<div class="fitem"><span class="fcode">BAT-EN-103</span><span class="fname">Isolation plancher bas</span></div>
-<div class="fitem"><span class="fcode">BAT-EN-104</span><span class="fname">Menuiseries performantes</span></div>
-<div class="fitem"><span class="fcode">BAT-TH-104</span><span class="fname">PAC air/eau</span></div>
-<div class="fitem"><span class="fcode">BAT-TH-116</span><span class="fname">Chaudière condensation</span></div>
-<div class="fitem"><span class="fcode">BAT-TH-125</span><span class="fname">Régulation / VMC double flux</span></div>
-<div class="fitem"><span class="fcode">BAT-EQ-127</span><span class="fname">Éclairage LED haute efficacité</span></div>
-<div class="fitem"><span class="fcode">IND-UT-117</span><span class="fname">Variateurs de vitesse</span></div>
-<div class="fitem"><span class="fcode">IND-EN-111</span><span class="fname">Isolation réseau vapeur</span></div>
+<div class="fitem"><span class="fcode">BAT-EN-102</span><span class="fname">Isolation des murs (ITE / ITI)</span></div>
+<div class="fitem"><span class="fcode">BAT-EN-103</span><span class="fname">Isolation de plancher bas</span></div>
+<div class="fitem"><span class="fcode">BAT-EN-104</span><span class="fname">Remplacement de fenêtres simple vitrage</span></div>
+<div class="fitem"><span class="fcode">BAT-EN-107</span><span class="fname">Isolation de toiture-terrasse</span></div>
+<div class="fitem"><span class="fcode">BAT-EN-113</span><span class="fname">Remplacement de façade rideau</span></div>
+<div class="fitem"><span class="fcode">BAT-TH-116</span><span class="fname">GTB (gestion technique du bâtiment)</span></div>
+<div class="fitem"><span class="fcode">BAT-TH-125</span><span class="fname">Ventilation simple flux</span></div>
+<div class="fitem"><span class="fcode">BAT-TH-126</span><span class="fname">CTA double flux avec échangeur</span></div>
+<div class="fitem"><span class="fcode">BAT-TH-158</span><span class="fname">PAC air/air réversible</span></div>
+<div class="fitem"><span class="fcode">BAT-TH-163</span><span class="fname">PAC air/eau</span></div>
 </div>
 </div>
 </div></section>
@@ -643,12 +628,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <section id="faq" class="sec sec-alt"><div class="secin">
 <div class="sech fu"><div class="sectag">Questions fréquentes</div><h2 class="sectit"><span class="gt">FAQ</span> — Tout savoir<br/>sur la valorisation CEE</h2></div>
 <div class="faqlist" style="max-width:800px;margin:0 auto">
-<details class="fqi fu"><summary>Pourquoi 90% des entreprises passent à côté des primes CEE ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Les raisons principales :</p><ul><li><strong>Méconnaissance du dispositif</strong> — La plupart ignorent que leurs travaux sont valorisables en CEE.</li><li><strong>Devis non conformes</strong> — Mentions obligatoires absentes = aucune valorisation possible.</li><li><strong>Contact direct limité</strong> — Un seul délégataire = accepter son taux sans négociation.</li><li><strong>Timing raté</strong> — Découverte après la signature ou le début des travaux.</li><li><strong>Complexité administrative</strong> — Calculs kWh cumac, suivi fiches PNCEE, très chronophage.</li></ul><p><strong>Notre valeur ajoutée :</strong> Nous intervenons EN AMONT, vérifions la conformité, mettons en concurrence 8-10 acteurs et gérons toute la partie administrative. Résultat : +10 à +20% vs. démarche directe.</p></div></details>
-<details class="fqi fu"><summary>Mon projet est déjà en cours, est-ce trop tard ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p><strong>Cela dépend de l'avancement :</strong></p><ul><li><strong>Devis signés, travaux non démarrés</strong> — Valorisation possible si les devis sont conformes (sinon avenant).</li><li><strong>Chantier en cours, certains lots non démarrés</strong> — Les lots futurs peuvent être valorisés.</li><li><strong>Conception en cours</strong> — Moment idéal pour orienter les choix techniques.</li></ul><p>Contactez-nous immédiatement. Dans 70% des cas "projets en cours", nous trouvons une solution pour sauver au moins une partie de la valorisation CEE.</p></div></details>
-<details class="fqi fu"><summary>Quels types de travaux sont éligibles ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Tous les travaux qui génèrent des économies d'énergie dans des <strong>bâtiments existants de plus de 2 ans</strong> :</p><ul><li><strong>Enveloppe</strong> — ITE, ITI, isolation toiture/plancher, menuiseries</li><li><strong>Chauffage</strong> — PAC air/eau, eau/eau, chaudières condensation, récupération de chaleur</li><li><strong>Éclairage</strong> — LED haute efficacité, détection présence, gradation</li><li><strong>Pilotage</strong> — GTB, VMC double flux, régulation avancée</li></ul><p><strong>Bâtiments concernés :</strong> Bureaux, hôtels, commerces, logements collectifs, établissements publics, industries.</p></div></details>
-<details class="fqi fu"><summary>Comment A2FK est-il rémunéré ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Notre rémunération est <strong>exclusivement à la performance</strong> :</p><ul><li>Aucune avance de frais</li><li>Aucune facturation si aucune prime n'est versée</li><li>Commission prélevée uniquement sur la prime effectivement encaissée</li></ul><p>Ce modèle aligne parfaitement nos intérêts avec les vôtres : plus votre prime est élevée, plus nous sommes rémunérés.</p></div></details>
+<details class="fqi fu"><summary>Pourquoi des entreprises passent-elles à côté des primes CEE ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Les raisons principales :</p><ul><li><strong>Méconnaissance du dispositif</strong> — La plupart ignorent que leurs travaux sont valorisables en CEE.</li><li><strong>Devis non conformes</strong> — Mentions obligatoires absentes = aucune valorisation possible.</li><li><strong>Contact direct limité</strong> — Un seul délégataire = accepter son taux sans négociation.</li><li><strong>Timing raté</strong> — Découverte après la signature ou le début des travaux.</li><li><strong>Complexité administrative</strong> — Calculs kWh cumac, suivi fiches PNCEE, très chronophage.</li></ul><p>J'interviens en amont, je vérifie la conformité des devis et je gère la partie administrative jusqu'au versement. Sur une étude récente, faire préciser le niveau de régulation valait environ 7&nbsp;600&nbsp;€ de plus, sans surcoût matériel, et le choix du raccordement de la pompe à chaleur multipliait la prime par douze.</p></div></details>
+<details class="fqi fu"><summary>Mon projet est déjà en cours, est-ce trop tard ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p><strong>Cela dépend de l'avancement :</strong></p><ul><li><strong>Devis signés, travaux non démarrés</strong> — Valorisation possible si les devis sont conformes (sinon avenant).</li><li><strong>Chantier en cours, certains lots non démarrés</strong> — Les lots futurs peuvent être valorisés.</li><li><strong>Conception en cours</strong> — Moment idéal pour orienter les choix techniques.</li></ul><p>Contactez-nous immédiatement. Pour un projet en cours, nous recherchons une solution pour sauver au moins une partie de la valorisation CEE.</p></div></details>
+<details class="fqi fu"><summary>Quels types de travaux sont éligibles ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Tous les travaux qui génèrent des économies d'énergie dans des <strong>bâtiments existants de plus de 2 ans</strong> :</p><ul><li><strong>Enveloppe</strong> — ITE, ITI, isolation toiture/plancher, menuiseries</li><li><strong>Chauffage</strong> — PAC air/eau, eau/eau, récupération de chaleur</li><li><strong>Pilotage</strong> — GTB, VMC double flux, régulation avancée</li></ul><p><strong>Bâtiments concernés :</strong> Bureaux, hôtels, commerces, logements collectifs, établissements publics, industries.</p></div></details>
+<details class="fqi fu"><summary>Comment A2FK est-il rémunéré ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Deux volets. La mission AMO est réalisée sur devis ; sur les opérations d'un volume important, elle peut être incluse dans la valorisation CEE. La valorisation CEE est rémunérée au succès : aucune avance de frais, et aucune facturation si aucune prime n'est versée.</p></div></details>
 <details class="fqi fu"><summary>Quelle est la différence entre délégataire, mandataire et obligé ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p><strong>Les trois types d'acteurs CEE :</strong></p><ul><li><strong>Obligés</strong> — Fournisseurs d'énergie (Total, EDF…) tenus par la loi d'atteindre des objectifs CEE.</li><li><strong>Délégataires</strong> — Sociétés qui achètent les CEE pour le compte des obligés. Inscrits au registre Emmy.</li><li><strong>Mandataires</strong> — Intermédiaires spécialisés qui rassemblent des dossiers pour les revendre.</li></ul><p>Notre expertise : identifier <strong>qui paiera le mieux pour votre dossier spécifique</strong>, au bon moment.</p></div></details>
-<details class="fqi fu"><summary>Quel est le délai entre l'audit et le versement ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p><strong>Délai moyen : 45 à 90 jours</strong> selon la complexité du dossier :</p><ul><li>Audit initial : 48h</li><li>Mise en concurrence : 5 jours</li><li>Négociation et sélection : 3 jours</li><li>Constitution du dossier : 4 à 8 semaines</li><li>Validation Emmy et versement : 2 à 4 semaines</li></ul><p>Notre délai moyen constaté est de <strong>62 jours</strong> pour les dossiers simples, jusqu'à 120 jours pour les projets complexes.</p></div></details>
+<details class="fqi fu"><summary>Quel est le délai entre l'audit et le versement ? <span class="fqico"><i class="fas fa-plus"></i></span></summary><div class="fqbody"><p>Le délai dépend du financeur retenu, de la date d'achèvement des travaux et du contrôle sur site. Je vous le précise dès la pré-étude. La prime est versée directement au bénéficiaire.</p></div></details>
 </div>
 </div></section>
 
@@ -662,7 +647,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
     <span class="pill pg" style="font-size:10px;padding:3px 10px"><i class="fas fa-star"></i> Nouveauté P6</span>
     <span class="blog-date">Mars 2026</span>
   </div>
-  <div class="blog-title">La fiche Rénovation Globale Tertiaire arrive en 2026 — ce que ça change pour vos projets</div>
+  <div class="blog-title">Fiche Rénovation Globale Tertiaire : un texte attendu, pas encore publié</div>
   <div class="blog-excerpt">C'est la nouveauté la plus attendue de la P6. Une fiche CEE dédiée à la rénovation globale des bâtiments tertiaires est en cours de finalisation. Pour les maîtres d'ouvrage qui envisagent un bouquet de travaux, le timing est décisif.</div>
 </div>
 <div class="blog-chevron"><i class="fas fa-chevron-down"></i></div>
@@ -672,8 +657,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <p>Jusqu'ici, les CEE tertiaires fonctionnaient par opérations isolées — une fiche par type de travaux. La grande nouveauté attendue pour 2026 est une fiche CEE visant à financer la rénovation globale des bâtiments tertiaires, permettant de financer un bouquet de travaux cohérent plutôt que des travaux individuels sans cohérence globale.</p>
 <p>Concrètement : au lieu de déposer 4 dossiers séparés (isolation, PAC, LED, GTB), vous déposez un seul dossier global. Volume de kWh cumac consolidé, prime plus élevée, traitement simplifié.</p>
 <h4>Pourquoi c'est une opportunité majeure</h4>
-<p>Cette fiche va permettre de couvrir potentiellement jusqu'à 60% du montant des travaux de rénovation énergétique — le taux le plus élevé jamais atteint sur des opérations tertiaires courantes.</p>
-<p>Les projets incluant le remplacement d'une chaudière fioul ou gaz par une PAC air-eau bénéficieront de bonifications exceptionnelles, maximisant la subvention CEE tout en protégeant contre la volatilité des prix du gaz.</p>
+<p>Le texte de la fiche n'est pas publié à ce jour.</p>
+<p>Les bonifications envisagées pour ce texte ne sont pas encore arrêtées.</p>
 <h4>Ce que ça exige en pratique</h4>
 <ul>
 <li>Un audit énergétique préalable obligatoire</li>
@@ -776,10 +761,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
     <p>Le décret éco-énergie tertiaire impose aux bâtiments de plus de 1 000 m² une réduction de consommation de 40% d'ici 2030 par rapport à l'année de référence. Les CEE, eux, financent les travaux qui permettent d'atteindre cet objectif.</p>
     <p>Le point clé que beaucoup ratent : ces deux dispositifs sont cumulables. Les travaux que vous devez faire pour respecter le décret tertiaire sont souvent les mêmes que ceux qui génèrent le plus de kWh cumac CEE.</p>
     <h4>Les travaux qui cochent les deux cases</h4>
-    <p><strong>Isolation de l'enveloppe</strong> — Toiture terrasse (BAT-EN-101), ITE façades (BAT-EN-102), planchers bas (BAT-EN-103) : ces opérations réduisent la consommation réelle déclarée sur OPERAT et génèrent des kWh cumac valorisables en CEE. Double bénéfice, un seul chantier.</p>
-    <p><strong>Remplacement des systèmes CVC</strong> — PAC air/eau (BAT-TH-163), chaudière condensation (BAT-TH-116), VMC double flux (BAT-TH-125) : ce sont les postes les plus impactants sur la consommation OPERAT et parmi les mieux valorisés en CEE tertiaire.</p>
-    <p><strong>Pilotage et GTB</strong> — La GTB (BAT-TH-116 révisée P6) est désormais exigée sur certaines installations CVC pour obtenir les CEE. Elle est aussi l'un des leviers les plus efficaces pour tenir la trajectoire décret tertiaire sans travaux lourds.</p>
-    <p><strong>Éclairage LED</strong> — BAT-EQ-127 : souvent sous-estimé. Sur un grand tertiaire, le remplacement LED représente 15 à 25% de l'économie d'énergie finale déclarée sur OPERAT et génère des volumes CEE significatifs.</p>
+    <p><strong>Isolation de l'enveloppe</strong> — Toiture terrasse (BAT-EN-107), ITE façades (BAT-EN-102), planchers bas (BAT-EN-103) : ces opérations réduisent la consommation réelle déclarée sur OPERAT et génèrent des kWh cumac valorisables en CEE. Double bénéfice, un seul chantier.</p>
+    <p><strong>Remplacement des systèmes CVC</strong> — PAC air/eau (BAT-TH-163), VMC double flux (BAT-TH-126) : ce sont les postes les plus impactants sur la consommation OPERAT et parmi les mieux valorisés en CEE tertiaire.</p>
+    <p><strong>Pilotage et GTB</strong> — La GTB (BAT-TH-116) est l'un des leviers les plus efficaces pour tenir la trajectoire décret tertiaire sans travaux lourds.</p>
+    <p><strong>Éclairage LED</strong> — La fiche LED BAT-EQ-127 est abrogée depuis le 25/02/2026.</p>
     <h4>La mécanique financière</h4>
     <p>Prenons un immeuble de bureaux de 3 000 m² à rénover :</p>
     <ul>
@@ -801,9 +786,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <div class="sech fu"><div class="sectag">Écosystème CEE</div><h2 class="sectit">Notre <span class="gt">Réseau</span></h2><p class="secsub">Un réseau qualifié d'acteurs certifiés — sélectionnés pour leur sérieux et leur réactivité</p></div>
 <div class="pgrid fu">
 <div class="pbox">
-  <div class="ptype">Délégataires agréés Emmy</div>
+  <div class="ptype">Délégataires</div>
   <ul class="plist">
-    <li>12+ délégataires nationaux actifs</li>
     <li>Inscrits au registre officiel Emmy</li>
     <li>Spécialistes tertiaire et logement collectif</li>
     <li>Obligés énergéticiens directs</li>
@@ -813,10 +797,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <div class="pbox"><div class="ptype">Mandataires spécialisés</div><ul class="plist"><li>Mandataires sectoriels CEE</li><li>Réseaux régionaux Sud de France</li><li>Spécialistes copropriété</li><li>Experts industrie et tertiaire</li></ul></div>
 <div class="pbox"><div class="ptype">Réseau RGE Terrain</div><ul class="plist"><li>Installateurs CVC certifiés RGE</li><li>Entreprises isolation agréées</li><li>BET et AMO partenaires</li><li>Bureaux de contrôle COFRAC</li></ul></div>
 </div>
-<div style="margin-top:20px;padding:16px 20px;background:var(--surface);border:1px solid var(--border);border-radius:10px;font-size:13px;color:var(--text3);text-align:center" class="fu">
-<i class="fas fa-shield-alt" style="color:#10B981;margin-right:8px"></i>
-Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--text2)">registre officiel Emmy</strong> tenu par le Pôle National des CEE. Traçabilité totale et conforme garantie.
-</div>
 </div></section>
 
 <section id="contact" class="sec sec-alt"><div class="secin">
@@ -824,13 +804,13 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
 <div class="cgrid">
 <div class="fu">
 <h3 class="citit">Audit &amp; Estimation sous 48h</h3>
-<p class="cisub">Nos experts analysent votre projet et vous fournissent une estimation personnalisée. Sans engagement, sans avance de frais.</p>
+<p class="cisub">Nos experts analysent votre projet et vous fournissent une estimation personnalisée. Sans engagement.</p>
 <div class="cfeat">
 <div class="cf"><i class="fas fa-search"></i><span>Analyse complète de vos devis et plans</span></div>
 <div class="cf"><i class="fas fa-calculator"></i><span>Estimation précise des kWh cumac valorisables</span></div>
 <div class="cf"><i class="fas fa-users"></i><span>Mise en concurrence de 8 à 10 acteurs</span></div>
 <div class="cf"><i class="fas fa-check-double"></i><span>Suivi complet jusqu'au versement de la prime</span></div>
-<div class="cf"><i class="fas fa-euro-sign"></i><span>Rémunération au succès uniquement</span></div>
+<div class="cf"><i class="fas fa-euro-sign"></i><span>Valorisation CEE au succès</span></div>
 <div class="cf"><i class="fas fa-clock"></i><span>Réponse garantie sous 48 heures ouvrées</span></div>
 </div>
 <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px">
@@ -864,7 +844,7 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
   <p style="font-size:12px;color:var(--text3);font-family:var(--mono);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px">Raccourci — optionnel</p>
   <label class="fl" style="margin-bottom:6px">Tapez le nom de votre entreprise pour auto-remplir</label>
   <div style="position:relative">
-    <input class="fi" type="text" id="cCompanySearch" placeholder="Ex: Neocity, Cabinet L'Adresse..." autocomplete="off" oninput="searchCompany(this.value)">
+    <input class="fi" type="text" id="cCompanySearch" placeholder="Ex : nom de votre société" autocomplete="off" oninput="searchCompany(this.value)">
     <div id="company-dropdown" style="display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;margin-top:4px;z-index:100;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4)"></div>
   </div>
   <div id="company-selected" style="display:none;margin-top:10px;padding:10px 14px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:8px;font-size:13px"></div>
@@ -908,21 +888,13 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
     <div class="about-contact">
       <a href="tel:0650578388"><i class="fas fa-phone" style="color:#10B981;width:16px"></i> 06 50 57 83 88</a>
       <a href="mailto:contact@a2fk.fr"><i class="fas fa-envelope" style="color:#0EA5E9;width:16px"></i> contact@a2fk.fr</a>
-      <a href="#"><i class="fas fa-map-marker-alt" style="color:var(--text3);width:16px"></i> Juvignac, Hérault (34)</a>
+      <span style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text2)"><i class="fas fa-map-marker-alt" style="color:var(--text3);width:16px"></i> Juvignac, Hérault (34)</span>
     </div>
   </div>
   <div class="about-stats">
     <div>
       <div class="astat-num">15 ans</div>
       <div class="astat-label">Expérience terrain BTP</div>
-    </div>
-    <div>
-      <div class="astat-num">+120</div>
-      <div class="astat-label">Dossiers CEE traités</div>
-    </div>
-    <div>
-      <div class="astat-num">1,2 M€</div>
-      <div class="astat-label">Primes 2024-2025</div>
     </div>
     <div>
       <div class="astat-num">100%</div>
@@ -952,58 +924,17 @@ Tous nos partenaires délégataires sont inscrits au <strong style="color:var(--
 </a>
 <p>Mandataire CEE spécialisé trading multi-acteurs. Mise en concurrence délégataires + mandataires + obligés pour maximiser vos primes CEE.</p>
 </div>
-<div><div class="fct">Navigation</div><ul class="flinks"><li><a href="#expertise">Notre expertise</a></li><li><a href="#processus">Processus</a></li><li><a href="#projets">Projets réalisés</a></li><li><a href="#calculateur">Simulateur CEE</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-<div><div class="fct">CEE</div><ul class="flinks"><li><a href="#faq">Qu'est-ce que le CEE ?</a></li><li><a href="#">Fiches PNCEE</a></li><li><a href="#">Registre Emmy</a></li><li><a href="#">Période 6 2026-2030</a></li><li><a href="#">Cours actuel</a></li></ul></div>
-<div><div class="fct">Contact</div><ul class="flinks"><li><a href="#contact">Audit gratuit</a></li><li><a href="tel:0650578388">06 50 57 83 88</a></li><li><a href="mailto:contact@a2fk.fr">contact@a2fk.fr</a></li><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="#">Confidentialité</a></li></ul></div>
+<div><div class="fct">Navigation</div><ul class="flinks"><li><a href="#amo">AMO énergétique</a></li><li><a href="#expertise">Notre expertise</a></li><li><a href="#processus">Processus</a></li><li><a href="#projets">Projets</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+<div><div class="fct">CEE</div><ul class="flinks"><li><a href="#faq">Qu'est-ce que le CEE ?</a></li></ul></div>
+<div><div class="fct">Contact</div><ul class="flinks"><li><a href="#contact">Pré-étude CEE</a></li><li><a href="tel:0650578388">06 50 57 83 88</a></li><li><a href="mailto:contact@a2fk.fr">contact@a2fk.fr</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
 </div>
 <div class="footbot">
-<span class="footcopy">© 2025 A2FK — Expert Trading CEE &amp; Valorisation Énergétique. Tous droits réservés.</span>
-<span style="font-size:13px;color:var(--text3);display:flex;align-items:center;gap:6px"><i class="fas fa-shield-alt" style="color:#10B981"></i> Mandataire CEE agréé Emmy | Période 6 CEE 2026–2030</span>
+<span class="footcopy">© 2026 A2FK — Expert Trading CEE &amp; Valorisation Énergétique. Tous droits réservés.</span>
+<span style="font-size:13px;color:var(--text3);display:flex;align-items:center;gap:6px"><i class="fas fa-shield-alt" style="color:#10B981"></i> Période 6 CEE 2026–2030</span>
 </div>
 </div></footer>
 
-<div class="modal-ov" id="exitModal">
-<div class="modal-box">
-<button class="mclose" onclick="document.getElementById('exitModal').classList.remove('open')"><i class="fas fa-times"></i></button>
-<div class="micon">⚠️</div>
-<h3 class="mtit">Attendez !</h3>
-<p class="msub">Ne laissez pas passer <strong>des milliers d'euros de primes CEE</strong>. Obtenez votre audit gratuit avant de partir.</p>
-<div class="moffer"><div class="motag">Offre exclusive</div><div class="motit">Audit CEE offert — réponse sous 48h</div><div class="mosub">+ Estimation personnalisée sous 48h</div></div>
-<div class="mform"><input class="fi" type="email" id="mEmail" placeholder="Votre email professionnel"><div id="mEmailErr" class="ferr"></div><button class="fsub" onclick="submitModal()"><i class="fas fa-gift"></i> Recevoir mon audit offert</button></div>
-<p class="fnote">Aucun engagement • Réponse garantie sous 48h</p>
-</div>
-</div>
-
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const COEFS={hotel:{multi:2.8,isolation:1.4,chauffage:1.2,led:0.5,pilotage:0.4},bureaux:{multi:2.6,isolation:1.3,chauffage:1.1,led:0.6,pilotage:0.5},commerce:{multi:2.2,isolation:1.0,chauffage:0.9,led:0.8,pilotage:0.4},logement:{multi:2.4,isolation:1.5,chauffage:1.3,led:0.3,pilotage:0.3},industrie:{multi:3.2,isolation:1.2,chauffage:1.4,led:0.9,pilotage:0.7},public:{multi:2.5,isolation:1.3,chauffage:1.2,led:0.7,pilotage:0.5}};
-const PRIX=6.80;
-function fmt(n){return Math.round(n).toLocaleString('fr-FR');}
-function onRange(){
-  const v=+document.getElementById('surf').value;
-  const s=v.toLocaleString('fr-FR')+' m\u00b2';
-  document.getElementById('surfV').textContent=s;
-  document.getElementById('surfLbl').textContent=s;
-  liveCalc();
-}
-function liveCalc(){if(document.getElementById('CR').classList.contains('show'))doCalc(false);}
-function doCalc(scroll=true){
-  const bat=document.getElementById('typeBat').value;
-  const trav=document.getElementById('travaux').value;
-  const surf=+document.getElementById('surf').value;
-  const vol=Math.round(surf*COEFS[bat][trav]);
-  const direct=Math.round(vol*PRIX);
-  const min=Math.round(direct*1.10);
-  const max=Math.round(direct*1.20);
-  const gain=min-direct;
-  document.getElementById('rVol').textContent=fmt(vol);
-  document.getElementById('rDir').textContent=fmt(direct)+' \u20ac';
-  document.getElementById('rMin').textContent=fmt(min)+' \u20ac';
-  document.getElementById('rMax').textContent=fmt(max)+' \u20ac';
-  document.getElementById('rGain').textContent='+'+fmt(gain)+' \u20ac';
-  const r=document.getElementById('CR');
-  r.classList.add('show');
-  if(scroll)r.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
 function animCnt(el,target,dec){
   const dur=1800,start=performance.now();
   function step(now){
@@ -1028,8 +959,6 @@ const io=new IntersectionObserver(entries=>{
   });
 },{threshold:0.15});
 document.querySelectorAll('.fu,.scard').forEach(el=>io.observe(el));
-let exitShown=false;
-document.addEventListener('mouseleave',e=>{if(e.clientY<10&&!exitShown){exitShown=true;setTimeout(()=>document.getElementById('exitModal').classList.add('open'),500);}});
 let mobOpen=false;
 function toggleMobile(){
   mobOpen=!mobOpen;
@@ -1164,14 +1093,6 @@ function toggleBlog(el){
   document.querySelectorAll('.blog-card').forEach(c=>c.classList.remove('blog-open'));
   if(!isOpen)card.classList.add('blog-open');
 }
-function submitModal(){
-  const e=document.getElementById('mEmail').value.trim();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){fShowErr('mEmail','Email invalide — doit contenir @ et un domaine valide.');return;}
-  fClearErr('mEmail');
-  document.getElementById('exitModal').classList.remove('open');
-  document.getElementById('cEmail').value=e;
-  document.getElementById('contact').scrollIntoView({behavior:'smooth'});
-}
 ['cNom','cSociete','cEmail','cTel','cDesc','mEmail'].forEach(id=>{
   const el=document.getElementById(id);
   if(el)el.addEventListener('focus',()=>fClearErr(id));
@@ -1226,6 +1147,7 @@ validateField('surfaceContact', v => v !== '');
 validateField('budgetContact',  v => v !== '');
 validateField('stadeContact',   v => v !== '');
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  if(a.getAttribute('href')==='#')return;
   a.addEventListener('click',ev=>{
     ev.preventDefault();
     const t=document.querySelector(a.getAttribute('href'));
@@ -1341,7 +1263,6 @@ function updateCompletion(){
     const f = document.getElementById(id);
     if(f && f.selectedIndex > 0) filled++;
   });
-  console.log('DEBUG filled:', filled, '/ total:', total);
   const pct = Math.round((filled / total) * 100);
   const arcLen = 267;
   document.getElementById('gauge-arc').style.strokeDashoffset = arcLen - (arcLen * pct / 100);
@@ -1421,7 +1342,7 @@ function cbotEnd(k){
     no1:{cls:'cbot-warn',txt:'Malheureusement, seuls les bâtiments existants de plus de 2 ans sont éligibles aux CEE.',btn:`<button class="cbot-btn-choice" onclick="cbotClose()">Fermer</button>`},
     no2:{cls:'',txt:'Anticipez dès maintenant — un audit gratuit identifie les opportunités CEE sur votre patrimoine.',btn:`<button class="bcta" onclick="cbotGoContact()"><i class="fas fa-arrow-right"></i> Contacter A2FK</button>`},
     yes:{cls:'cbot-ok',txt:'✅ Votre projet est éligible ! Obtenez votre estimation gratuite maintenant.',btn:`<button class="bcta" onclick="cbotGoContact()"><i class="fas fa-bolt"></i> Démarrer mon audit gratuit</button>`},
-    no3:{cls:'cbot-warn',txt:'⚡ Agissez vite — contactez-nous immédiatement pour analyser votre situation.',btn:`<button class="bcta" onclick="cbotGoContact()"><i class="fas fa-arrow-right"></i> Contacter A2FK</button>`},
+    no3:{cls:'cbot-warn',txt:'C\'est le meilleur moment : le montage CEE se prépare avant la signature des devis. Décrivez-moi votre projet.',btn:`<button class="bcta" onclick="cbotGoContact()"><i class="fas fa-arrow-right"></i> Contacter A2FK</button>`},
     wip:{cls:'',txt:'Une valorisation partielle est souvent possible. Contactez-nous pour analyse.',btn:`<button class="bcta" onclick="cbotGoContact()"><i class="fas fa-arrow-right"></i> Contacter A2FK</button>`}
   };
   const m=msgs[k];
