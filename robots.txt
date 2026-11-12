@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a2fk.fr/sitemap.xml
+Sitemap: https://www.a2fk.fr/sitemap.xml

@@ -2,12 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.a2fk.fr/</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.a2fk.fr/mentions-legales.html</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.a2fk.fr/blog/p6-2026-2030-changements-dossiers-cee-tertiaires.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.a2fk.fr/blog/bat-th-163-bat-th-164-fiches-pac-tertiaire-p6.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.a2fk.fr/blog/decret-tertiaire-cee-financer-conformite-operat-2026.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://www.a2fk.fr/blog/fiche-renovation-globale-tertiaire-cee-p6-2026.html</loc>
+    <lastmod>2026-11-12</lastmod>
   </url>
 </urlset>
