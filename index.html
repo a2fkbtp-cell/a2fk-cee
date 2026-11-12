@@ -390,9 +390,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
   </svg>
   <div><span class="lname">A2FK</span><span class="lsub">AMO ÉNERGÉTIQUE &amp; TRADING CEE</span></div>
 </a>
-<div class="nlinks"><a href="#amo">AMO</a><a href="#expertise">Expertise</a><a href="#processus">Processus</a><a href="#projets">Projets</a><a href="#temoignages">Témoignages</a><a href="#faq">FAQ</a><a href="#blog">Blog</a></div>
+<div class="nlinks"><a href="#amo">AMO</a><a href="#expertise">Expertise</a><a href="#processus">Processus</a><a href="#projets">Projets</a><a href="#calculateur">Simulateur</a><a href="#temoignages">Témoignages</a><a href="#faq">FAQ</a><a href="#blog">Blog</a></div>
 <a href="tel:0650578388" class="nav-phone" style="display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:10px;border:1px solid var(--border2);color:var(--text2);text-decoration:none;font-size:12px;font-weight:600;transition:all 0.2s;white-space:nowrap" onmouseover="this.style.borderColor='#10B981';this.style.color='#10B981'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--text2)'"><i class="fas fa-phone" style="font-size:11px"></i> 06 50 57 83 88</a>
-<a href="#contact" class="bcta" style="padding:9px 16px;font-size:13px"><i class="fas fa-rocket" style="font-size:12px"></i> Estimer ma prime</a>
+<a href="#calculateur" class="bcta" style="padding:9px 16px;font-size:13px"><i class="fas fa-rocket" style="font-size:12px"></i> Estimer ma prime</a>
 <button class="mbtn" onclick="toggleMobile()"><i class="fas fa-bars"></i> Menu</button>
 </div></nav>
 
@@ -555,6 +555,29 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 <p class="proj-note">Exemple calculé sur les forfaits en vigueur. Montant indicatif, à confirmer par étude.</p>
 
 <div class="fu" style="text-align:center;margin-top:32px"><a href="#contact" class="bcta xl"><i class="fas fa-paper-plane"></i> Soumettre mon projet</a></div>
+</div></section>
+
+<section id="calculateur" class="sec sec-alt"><div class="secin">
+<div class="sech fu"><div class="sectag">Simulateur en ligne</div><h2 class="sectit">Estimez votre <span class="gt">Prime CEE</span></h2><p class="secsub">Une première fourchette en euros, en quelques secondes.</p></div>
+<div class="calcwrap fu">
+<div class="calch"><h3 class="calcht">Simulateur CEE — A2FK</h3><p class="calchs">Estimation indicative en euros, à confirmer par la pré-étude.</p></div>
+<div class="calcb">
+<div class="frow">
+<div class="fg"><label class="fl">Type de bâtiment</label><select class="fi" id="typeBat" onchange="liveCalc()"><option value="hotel">Hôtel / Hébergement</option><option value="bureaux">Bureaux / Tertiaire</option><option value="commerce">Commerce / Retail</option><option value="logement">Logement collectif</option><option value="industrie">Industrie / Entrepôt</option><option value="public">Établissement public</option></select></div>
+<div class="fg"><label class="fl">Type de travaux</label><select class="fi" id="travaux" onchange="liveCalc()"><option value="multi">Multi-lots (isolation + chauffage + pilotage)</option><option value="isolation">Isolation thermique</option><option value="chauffage">Chauffage / PAC</option><option value="pilotage">Pilotage / GTB / VMC</option></select></div>
+</div>
+<div class="fg">
+<label class="fl">Surface concernée : <span id="surfLbl" style="color:#0EA5E9">1 000 m²</span></label>
+<div class="rwrap"><input type="range" id="surf" min="200" max="10000" step="50" value="1000" oninput="onRange()"><span class="rval" id="surfV">1 000 m²</span></div>
+</div>
+<button class="bcta" style="width:100%;justify-content:center;padding:15px;margin-bottom:0" onclick="doCalc()"><i class="fas fa-calculator"></i> Calculer ma prime estimée</button>
+<div id="CR" class="calcres">
+<div class="rgrid" style="grid-template-columns:1fr">
+<div class="rc hl"><div class="rl">Prime estimée</div><div class="rn" id="rFourchette">—</div><div class="ru">fourchette indicative</div></div>
+</div>
+<div style="text-align:center;margin-top:20px"><button type="button" class="bcta" onclick="simToContact()"><i class="fas fa-paper-plane"></i> Recevoir ma pré-étude</button><p style="font-size:12px;color:var(--text3);margin-top:10px">Estimation indicative, hors étude. La pré-étude sous 48 h la confirme.</p></div>
+</div>
+</div></div>
 </div></section>
 
 <section id="temoignages" class="sec" style="background:var(--bg2)"><div class="secin">
@@ -947,7 +970,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 </a>
 <p>AMO énergétique et trading CEE : travaux arbitrés, financeurs mis en concurrence, dossiers suivis jusqu'au versement.</p>
 </div>
-<div><div class="fct">Navigation</div><ul class="flinks"><li><a href="#amo">AMO énergétique</a></li><li><a href="#expertise">Notre expertise</a></li><li><a href="#processus">Processus</a></li><li><a href="#projets">Projets</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+<div><div class="fct">Navigation</div><ul class="flinks"><li><a href="#amo">AMO énergétique</a></li><li><a href="#expertise">Notre expertise</a></li><li><a href="#processus">Processus</a></li><li><a href="#projets">Projets</a></li><li><a href="#calculateur">Simulateur CEE</a></li><li><a href="#faq">FAQ</a></li></ul></div>
 <div><div class="fct">CEE</div><ul class="flinks"><li><a href="#faq">Qu'est-ce que le CEE ?</a></li></ul></div>
 <div><div class="fct">Contact</div><ul class="flinks"><li><a href="#contact">Pré-étude CEE</a></li><li><a href="tel:0650578388">06 50 57 83 88</a></li><li><a href="mailto:contact@a2fk.fr">contact@a2fk.fr</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
 </div>
@@ -958,6 +981,46 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 </div></footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const COEFS={hotel:{multi:2.8,isolation:1.4,chauffage:1.2,led:0.5,pilotage:0.4},bureaux:{multi:2.6,isolation:1.3,chauffage:1.1,led:0.6,pilotage:0.5},commerce:{multi:2.2,isolation:1.0,chauffage:0.9,led:0.8,pilotage:0.4},logement:{multi:2.4,isolation:1.5,chauffage:1.3,led:0.3,pilotage:0.3},industrie:{multi:3.2,isolation:1.2,chauffage:1.4,led:0.9,pilotage:0.7},public:{multi:2.5,isolation:1.3,chauffage:1.2,led:0.7,pilotage:0.5}};
+const PRIX=6.7;
+function fmt(n){return Math.round(n).toLocaleString('fr-FR');}
+function onRange(){
+  const v=+document.getElementById('surf').value;
+  const s=v.toLocaleString('fr-FR')+' m\u00b2';
+  document.getElementById('surfV').textContent=s;
+  document.getElementById('surfLbl').textContent=s;
+  liveCalc();
+}
+function liveCalc(){if(document.getElementById('CR').classList.contains('show'))doCalc(false);}
+let simEst=null;
+function doCalc(scroll=true){
+  const bat=document.getElementById('typeBat').value;
+  const trav=document.getElementById('travaux').value;
+  const surf=+document.getElementById('surf').value;
+  const vol=surf*COEFS[bat][trav];
+  const low=Math.round(vol*PRIX*0.85/100)*100;
+  const high=Math.round(vol*PRIX/100)*100;
+  simEst={low:low,high:high,surf:surf};
+  document.getElementById('rFourchette').textContent=fmt(low)+' \u20ac \u00e0 '+fmt(high)+' \u20ac';
+  const r=document.getElementById('CR');
+  r.classList.add('show');
+  if(scroll)r.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function simToContact(){
+  doCalc(false);
+  const tb=document.getElementById('typeBat'),tr=document.getElementById('travaux');
+  const batTxt=tb.options[tb.selectedIndex].text.trim(),travTxt=tr.options[tr.selectedIndex].text.trim();
+  const s=simEst.surf;
+  const bc=document.getElementById('typeBatContact');
+  if(bc){const o=[...bc.options].find(x=>x.text.trim()===batTxt);if(o){bc.value=o.value;bc.dispatchEvent(new Event('change'));}}
+  const sc=document.getElementById('surfaceContact');
+  if(sc){sc.selectedIndex=s<500?1:s<=1000?2:s<=3000?3:s<=5000?4:5;sc.dispatchEvent(new Event('change'));}
+  const d=document.getElementById('cDesc');
+  if(d&&d.value.trim()===''){d.value='Simulateur : '+batTxt+', '+travTxt+', '+s.toLocaleString('fr-FR')+' m\u00b2, estimation '+fmt(simEst.low)+' \u20ac \u00e0 '+fmt(simEst.high)+' \u20ac.';}
+  if(typeof updateCompletion==='function')updateCompletion();
+  const c=document.getElementById('contact');
+  if(c)c.scrollIntoView({behavior:'smooth'});
+}
 function animCnt(el,target,dec){
   const dur=1800,start=performance.now();
   function step(now){
