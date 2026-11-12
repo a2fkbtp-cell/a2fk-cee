@@ -990,6 +990,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 </div>
 </div></footer>
 
+<div class="modal-ov" id="exitModal">
+<div class="modal-box">
+<button class="mclose" onclick="document.getElementById('exitModal').classList.remove('open')"><i class="fas fa-times"></i></button>
+<div class="micon">⚠️</div>
+<h3 class="mtit">Attendez !</h3>
+<p class="msub">Avant de partir, recevez une pré-étude CEE de votre projet, sous 48 h.</p>
+<div class="moffer"><div class="motag">Offert</div><div class="motit">Pré-étude CEE offerte — réponse sous 48 h</div><div class="mosub">Opérations finançables et prime estimée en euros</div></div>
+<div class="mform"><input class="fi" type="email" id="mEmail" placeholder="Votre email professionnel"><div id="mEmailErr" class="ferr"></div><button class="fsub" onclick="submitModal()"><i class="fas fa-gift"></i> Recevoir ma pré-étude</button></div>
+<p class="fnote">Aucun engagement • Réponse sous 48 h</p>
+</div>
+</div>
+
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const COEFS={hotel:{multi:2.8,isolation:1.4,chauffage:1.2,led:0.5,pilotage:0.4},bureaux:{multi:2.6,isolation:1.3,chauffage:1.1,led:0.6,pilotage:0.5},commerce:{multi:2.2,isolation:1.0,chauffage:0.9,led:0.8,pilotage:0.4},logement:{multi:2.4,isolation:1.5,chauffage:1.3,led:0.3,pilotage:0.3},industrie:{multi:3.2,isolation:1.2,chauffage:1.4,led:0.9,pilotage:0.7},public:{multi:2.5,isolation:1.3,chauffage:1.2,led:0.7,pilotage:0.5}};
 const PRIX=6.7;
@@ -1056,6 +1068,8 @@ const io=new IntersectionObserver(entries=>{
   });
 },{threshold:0.15});
 document.querySelectorAll('.fu,.scard').forEach(el=>io.observe(el));
+let exitShown=false;
+document.addEventListener('mouseleave',e=>{if(e.clientY<10&&!exitShown){exitShown=true;setTimeout(()=>document.getElementById('exitModal').classList.add('open'),500);}});
 let mobOpen=false;
 function toggleMobile(){
   mobOpen=!mobOpen;
@@ -1189,6 +1203,35 @@ function toggleBlog(el){
   const isOpen=card.classList.contains('blog-open');
   document.querySelectorAll('.blog-card').forEach(c=>c.classList.remove('blog-open'));
   if(!isOpen)card.classList.add('blog-open');
+}
+function submitModal(){
+  const e=document.getElementById('mEmail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)){fShowErr('mEmail','Email invalide — doit contenir @ et un domaine valide.');return;}
+  fClearErr('mEmail');
+  const NR='Non renseigné';
+  const form=document.querySelector('#exitModal .mform');
+  const btn=form.querySelector('.fsub');
+  btn.disabled=true;
+  emailjs.send(EJS_SERVICE_ID, EJS_TEMPLATE_ID, {
+    from_name: 'Visiteur — fenêtre de sortie',
+    from_email: e,
+    phone: NR,
+    siret: NR,
+    company: NR,
+    address: NR,
+    building_type: NR,
+    surface: NR,
+    budget: NR,
+    project_stage: NR,
+    message: 'Demande de pré-étude envoyée depuis la fenêtre de sortie du site.',
+    to_email: 'contact@a2fk.fr'
+  }).then(()=>{
+    form.innerHTML='<p class="msub" style="text-align:center;margin-bottom:0">Merci, je vous réponds sous 48 h.</p>';
+  }).catch((err)=>{
+    console.error('EmailJS error:', err);
+    btn.disabled=false;
+    fShowErr('mEmail','Envoi impossible : contactez-moi au 06 50 57 83 88 ou à contact@a2fk.fr');
+  });
 }
 ['cNom','cSociete','cEmail','cTel','cDesc','mEmail'].forEach(id=>{
   const el=document.getElementById(id);
