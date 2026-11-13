@@ -374,6 +374,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 .logo-curve{stroke-dasharray:120;stroke-dashoffset:120;animation:drawCurve 1.2s cubic-bezier(0.4,0,0.2,1) 0.3s forwards}
 .logo-dot{opacity:0;transform-origin:37px 5px;animation:fadeInDot 0.4s ease-out 1.4s forwards}
 .logo-dot-glow{opacity:0;transform-origin:37px 5px;animation:fadeInDot 0.4s ease-out 1.4s forwards}
+.exc-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:8px}@media(min-width:640px){.exc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1024px){.exc-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}.exc-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:26px 24px;display:flex;flex-direction:column;min-width:0;container-type:inline-size}.exc-lab{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#0EA5E9;margin-bottom:10px}.exc-tit{font-family:var(--disp);font-size:21px;font-weight:700;line-height:1.25;margin-bottom:8px}.exc-inf{font-size:12px;color:var(--text3);font-family:var(--mono);margin-bottom:18px}.exc-vol-l{font-size:12px;color:var(--text3);font-family:var(--mono);margin-bottom:2px}.exc-vol{margin-bottom:14px;line-height:1.1;overflow-wrap:anywhere}.exc-vol-n{font-family:var(--mono);font-size:32px;font-size:clamp(28px,14cqi,52px);font-weight:700;letter-spacing:-0.5px;background:linear-gradient(135deg,#0EA5E9,#10B981);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap}.exc-vol-u{font-size:12px;color:var(--text2);font-family:var(--mono);white-space:nowrap}.exc-prime{font-size:14px;color:var(--text2);margin-bottom:6px}.exc-prime strong{color:var(--text);font-weight:700}.exc-part{font-size:13px;color:var(--text2);margin-bottom:8px}.exc-jauge{position:relative;height:6px;border-radius:100px;background:var(--border);margin-bottom:20px;overflow:hidden}.exc-jauge span{position:absolute;top:0;bottom:0;border-radius:100px;background:linear-gradient(90deg,#0EA5E9,#10B981)}.exc-ops{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--border);padding-top:16px}.exc-ops li{font-size:13px;color:var(--text);line-height:1.5}.exc-code{font-family:var(--mono);font-size:11px;color:var(--text3);white-space:nowrap}.exc-phr{font-size:13px;color:var(--text2);font-style:italic;line-height:1.6;margin-bottom:20px}.exc-btn{margin-top:auto;align-self:flex-start;white-space:normal}.exc-note{font-size:12px;color:var(--text3);font-style:italic;margin:16px 0 0}
 </style>
 <script type="application/ld+json">
 {
@@ -617,40 +618,92 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:60px 32p
 </div>
 </div>
 
-<div class="projcard fu">
-<div class="projh"><div>
-<div style="margin-bottom:12px"><span class="pill pa">Exemple illustratif</span></div>
-<h3 class="projtit">Hôtel — 3&nbsp;200&nbsp;m²</h3>
-<div class="lotd" style="margin-bottom:14px;color:var(--text2)">Occitanie · Zone H2 · Sortie du fossile</div>
-<p class="projins">Remplacement d'une chaufferie fioul ou gaz par une pompe à chaleur, avec dépose de la chaudière, dans le cadre du Coup de Pouce Chauffage des bâtiments tertiaires.</p>
-</div></div>
-<div class="proj-one">
-<div class="pst">Opérations</div><div class="lotlist">
-<div class="lot"><div class="lotn">Pompe à chaleur air/eau avec dépose de la chaudière (Coup de Pouce) — 3&nbsp;200&nbsp;m² : <span class="proj-eur">40&nbsp;500&nbsp;€</span></div></div>
-<div class="lot"><div class="lotn">Isolation des murs — 850&nbsp;m² : <span class="proj-eur">15&nbsp;500&nbsp;€</span></div></div>
-<div class="lot"><div class="lotn">Ventilation hygroréglable — 3&nbsp;200&nbsp;m² : <span class="proj-eur">7&nbsp;300&nbsp;€</span></div></div>
-</div><div class="lottot proj-tot"><span class="lottot-l">Total estimé : <span class="lottot-n">63&nbsp;300&nbsp;€</span></span></div>
+<div class="exc-grid">
+<article class="exc-card fu">
+<div class="exc-lab">Monogeste</div>
+<h3 class="exc-tit">Plancher bas sur parking</h3>
+<div class="exc-inf">Bureaux · Zone&nbsp;H1 · 1&nbsp;100&nbsp;m²</div>
+<div class="exc-vol-l">Volume estimé</div>
+<div class="exc-vol"><span class="exc-vol-n">3&nbsp;432&nbsp;000</span> <span class="exc-vol-u">kWh&nbsp;cumac</span></div>
+<p class="exc-prime">Prime estimée : <strong>19&nbsp;500&nbsp;à&nbsp;23&nbsp;000&nbsp;€</strong></p>
+<p class="exc-part">Part estimée du coût des travaux : ≈&nbsp;70 à 85&nbsp;% du poste isolation</p>
+<div class="exc-jauge" aria-hidden="true"><span style="left:70%;width:15%"></span></div>
+<ul class="exc-ops">
+<li>Isolation du plancher bas <span class="exc-code">BAT-EN-103</span></li>
+</ul>
+<p class="exc-phr">Souvent le poste le mieux financé du bâtiment. La surface retenue se joue au relevé, pas au plan.</p>
+<a href="#contact" class="bcta exc-btn">Chiffrer mon opération</a>
+</article>
+<article class="exc-card fu">
+<div class="exc-lab">Monogeste</div>
+<h3 class="exc-tit">Pompe à chaleur air/eau, sortie du gaz</h3>
+<div class="exc-inf">Bureaux · Zone&nbsp;H1 · 1&nbsp;500&nbsp;m²</div>
+<div class="exc-vol-l">Volume estimé</div>
+<div class="exc-vol"><span class="exc-vol-n">6&nbsp;480&nbsp;000</span> <span class="exc-vol-u">kWh&nbsp;cumac</span></div>
+<p class="exc-prime">Prime estimée : <strong>37&nbsp;000&nbsp;à&nbsp;43&nbsp;500&nbsp;€</strong></p>
+<p class="exc-part">Part estimée du coût des travaux : ≈&nbsp;40 à 50&nbsp;% de la production de chaleur</p>
+<div class="exc-jauge" aria-hidden="true"><span style="left:40%;width:10%"></span></div>
+<ul class="exc-ops">
+<li>Pompe à chaleur air/eau avec dépose de la chaudière, Coup de Pouce Chauffage <span class="exc-code">BAT-TH-163</span></li>
+</ul>
+<p class="exc-phr">Ce qu'on fait de la chaudière existante décide de la prime. À trancher avant la consultation des entreprises.</p>
+<a href="#contact" class="bcta exc-btn">Chiffrer mon opération</a>
+</article>
+<article class="exc-card fu">
+<div class="exc-lab">Bouquet de travaux</div>
+<h3 class="exc-tit">Hôtel</h3>
+<div class="exc-inf">Hôtellerie · Zone&nbsp;H3 · 2&nbsp;400&nbsp;m²</div>
+<div class="exc-vol-l">Volume estimé</div>
+<div class="exc-vol"><span class="exc-vol-n">4&nbsp;843&nbsp;720</span> <span class="exc-vol-u">kWh&nbsp;cumac</span></div>
+<p class="exc-prime">Prime estimée : <strong>27&nbsp;500&nbsp;à&nbsp;32&nbsp;500&nbsp;€</strong></p>
+<p class="exc-part">Part estimée du coût des travaux : ≈&nbsp;6 à 8&nbsp;% du programme</p>
+<div class="exc-jauge" aria-hidden="true"><span style="left:6%;width:2%"></span></div>
+<ul class="exc-ops">
+<li>Pompe à chaleur air/eau avec dépose de la chaudière, Coup de Pouce Chauffage <span class="exc-code">BAT-TH-163</span></li>
+<li>Ventilation hygroréglable <span class="exc-code">BAT-TH-125</span></li>
+<li>Remplacement des fenêtres simple vitrage <span class="exc-code">BAT-EN-104</span></li>
+</ul>
+<p class="exc-phr">En hôtellerie, la ventilation et les menuiseries se valorisent aussi, à condition que les devis le prévoient avant signature.</p>
+<a href="#contact" class="bcta exc-btn">Chiffrer mon opération</a>
+</article>
+<article class="exc-card fu">
+<div class="exc-lab">Bouquet de travaux</div>
+<h3 class="exc-tit">Établissement de santé</h3>
+<div class="exc-inf">Santé · Zone&nbsp;H2 · 3&nbsp;100&nbsp;m²</div>
+<div class="exc-vol-l">Volume estimé</div>
+<div class="exc-vol"><span class="exc-vol-n">7&nbsp;190&nbsp;500</span> <span class="exc-vol-u">kWh&nbsp;cumac</span></div>
+<p class="exc-prime">Prime estimée : <strong>41&nbsp;000&nbsp;à&nbsp;48&nbsp;000&nbsp;€</strong></p>
+<p class="exc-part">Part estimée du coût des travaux : ≈&nbsp;8 à 14&nbsp;% du programme</p>
+<div class="exc-jauge" aria-hidden="true"><span style="left:8%;width:6%"></span></div>
+<ul class="exc-ops">
+<li>Isolation du plancher bas <span class="exc-code">BAT-EN-103</span></li>
+<li>CTA double flux <span class="exc-code">BAT-TH-126</span></li>
+<li>Pompe à chaleur air/air <span class="exc-code">BAT-TH-158</span></li>
+<li>Gestion technique du bâtiment <span class="exc-code">BAT-TH-116</span></li>
+</ul>
+<p class="exc-phr">Quatre lots, quatre entreprises, un seul dossier : les pièces doivent concorder de bout en bout.</p>
+<a href="#contact" class="bcta exc-btn">Chiffrer mon opération</a>
+</article>
+<article class="exc-card fu">
+<div class="exc-lab">Bouquet de travaux</div>
+<h3 class="exc-tit">Immeuble de bureaux</h3>
+<div class="exc-inf">Bureaux · Zone&nbsp;H2 · 4&nbsp;600&nbsp;m²</div>
+<div class="exc-vol-l">Volume estimé</div>
+<div class="exc-vol"><span class="exc-vol-n">23&nbsp;306&nbsp;560</span> <span class="exc-vol-u">kWh&nbsp;cumac</span></div>
+<p class="exc-prime">Prime estimée : <strong>132&nbsp;500&nbsp;à&nbsp;156&nbsp;000&nbsp;€</strong></p>
+<p class="exc-part">Part estimée du coût des travaux : ≈&nbsp;15 à 24&nbsp;% du programme</p>
+<div class="exc-jauge" aria-hidden="true"><span style="left:15%;width:9%"></span></div>
+<ul class="exc-ops">
+<li>Pompe à chaleur air/eau avec dépose de la chaudière, Coup de Pouce Chauffage <span class="exc-code">BAT-TH-163</span></li>
+<li>CTA double flux <span class="exc-code">BAT-TH-126</span></li>
+<li>Gestion technique du bâtiment <span class="exc-code">BAT-TH-116</span></li>
+<li>Isolation du plancher bas <span class="exc-code">BAT-EN-103</span></li>
+</ul>
+<p class="exc-phr">À cette échelle, la prime pèse dans l'arbitrage du capex : elle se chiffre dès le programme, pas après les devis.</p>
+<a href="#contact" class="bcta exc-btn">Chiffrer mon opération</a>
+</article>
 </div>
-</div>
-<p class="proj-note">Exemple calculé sur les forfaits en vigueur. Montant indicatif, à confirmer par étude.</p>
-
-<div class="projcard fu">
-<div class="projh"><div>
-<div style="margin-bottom:12px"><span class="pill pa">Exemple illustratif</span></div>
-<h3 class="projtit">Immeuble de bureaux — 5&nbsp;800&nbsp;m²</h3>
-<div class="lotd" style="margin-bottom:14px;color:var(--text2)">Rhône · Zone H1 · Rénovation enveloppe et systèmes</div>
-<p class="projins">Programme combinant isolation de l'enveloppe, ventilation et pilotage, sur un immeuble occupé.</p>
-</div></div>
-<div class="proj-one">
-<div class="pst">Opérations</div><div class="lotlist">
-<div class="lot"><div class="lotn">Isolation de la toiture-terrasse — 1&nbsp;450&nbsp;m² : <span class="proj-eur">16&nbsp;300&nbsp;€</span></div></div>
-<div class="lot"><div class="lotn">Isolation des murs — 2&nbsp;200&nbsp;m² : <span class="proj-eur">42&nbsp;500&nbsp;€</span></div></div>
-<div class="lot"><div class="lotn">Gestion technique du bâtiment — 5&nbsp;800&nbsp;m² : <span class="proj-eur">14&nbsp;400&nbsp;€</span></div></div>
-<div class="lot"><div class="lotn">Ventilation double flux — 5&nbsp;800&nbsp;m² : <span class="proj-eur">20&nbsp;600&nbsp;€</span></div></div>
-</div><div class="lottot proj-tot"><span class="lottot-l">Total estimé : <span class="lottot-n">93&nbsp;800&nbsp;€</span></span></div>
-</div>
-</div>
-<p class="proj-note">Exemple calculé sur les forfaits en vigueur. Montant indicatif, à confirmer par étude.</p>
+<p class="exc-note">Exemples chiffrés sur les fiches et bonifications en vigueur au 13/11/2026. Valeurs indicatives, à confirmer par la pré-étude.</p>
 
 <div class="fu" style="text-align:center;margin-top:32px"><a href="#contact" class="bcta xl"><i class="fas fa-paper-plane"></i> Soumettre mon projet</a></div>
 </div></section>
